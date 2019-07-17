@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bookmarks>
+   <site url="http://download.eclipse.org/technology/babel/update-site/R0.13.0/mars" selected="true" name="language"/>
+   <site url="http://download.eclipse.org/releases/luna" selected="true" name="Luna"/>
+   <site url="http://download.eclipse.org/mylyn/releases/luna" selected="true" name="Mylyn for Eclipse Luna"/>
+   <site url="http://pydev.org/updates/" selected="true" name="pydev"/>
+   <site url="http://subclipse.tigris.org/update_1.8.x" selected="true" name="svn"/>
+   <site url="http://eclipse.tmatesoft.com/svnkit/1.7.x/" selected="true" name="svnkit"/>
+   <site url="http://download.eclipse.org/eclipse/updates/4.4" selected="true" name="The Eclipse Project Updates"/>
+   <site url="http://download.eclipse.org/tools/ve/updates/1.5.0" selected="true" name="tools"/>
+</bookmarks>
