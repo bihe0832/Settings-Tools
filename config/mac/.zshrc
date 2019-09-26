@@ -220,7 +220,7 @@ alias zixieandroidgradledebug='chmod +x ./gradlew && ./gradlew clean assembleDeb
 #android adb 
 alias adbSingle='alias adb="adb"'
 alias adbMutil='alias adb="adb devices | tail -n +2 | cut -sf 1 | xargs -I {} -p adb -s {}"'
-alias zixieadbscreenshots='adb shell screencap -p /sdcard/screen.png && adb pull /sdcard/screen.png /tmp/ && adb shell rm /sdcard/screen.png && open file:/tmp/screen.png'
+alias zixieadbscreenshots='adb shell screencap -p /sdcard/screen.png && adb pull /sdcard/screen.png /tmp/ && adb shell rm /sdcard/screen.png && cp -fr /tmp/screen.png ~/temp && open file:/tmp/screen.png'
 alias zixieadbdumpui='adb shell uiautomator dump /sdcard/UIdump.xml && adb pull /sdcard/UIdump.xml ~/temp/1/ && adb shell rm /sdcard/UIdump.xml && open ~/temp/1/UIdump.xml'
 alias zixieadbstop＝'adb shell am force-stop'
 alias zixieadbactivity='adb shell dumpsys activity'
