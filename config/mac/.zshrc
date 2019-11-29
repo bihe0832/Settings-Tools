@@ -133,8 +133,10 @@ alias open='open -n'
 alias his='history | grep '
 
 fun zixieproxyon() {
-	export http_proxy='http://web-proxy.oa.com:8080';
-	export https_proxy='http://web-proxy.oa.com:8080'
+	export http_proxy='http://127.0.0.1:12639';
+	export https_proxy='http://127.0.0.1:12639'
+	export no_proxy="*.oa.com|*.tencent.com|127.0.0.1|localhost"
+
 }
 
 fun zixieproxyoff() {
@@ -293,7 +295,7 @@ export ANDROID_TOOLS
 ANDROID_PLATFORM_TOOLS=$ANDROID_HOME/platform-tools
 export ANDROID_PLATFORM_TOOLS
 
-ANDROID_NDK_HOME=${ANDROIDNDK_LINUX_R10C}
+ANDROID_NDK_HOME=${ANDROIDNDK_LINUX_R16B}
 export ANDROID_NDK_HOME
 
 ANDROID_NDK_CMD=${ANDROID_NDK_HOME}/ndk-build
@@ -338,7 +340,10 @@ export isCompletedBuild=false
 export isDebug=true
 export isReleaseTest=false
 export isReleaseOfficial= false
-export isOfficial=false
+export isOfficial=true
 export isPreOfficial=false
 export channel="000000 111111"
 export channelType="debug official"
+export appNo=2
+export TAG="Tag_MNA_3.1.7_3970"
+export listAll=true
