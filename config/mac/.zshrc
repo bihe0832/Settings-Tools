@@ -180,7 +180,7 @@ alias zixiegittencent='cp ~/zixie/github/Settings-Tools/config/.gitTencentConfig
 alias zixiegitdefault='cp -r ~/zixie/github/Settings-Tools/config/.gitdefaultconfig ~/.gitconfig'
 alias zixiegitcheck="/bin/bash ~/zixie/github/Settings-Tools/tools/check_github.sh"
 alias zixiegitignore="cp -r ~/zixie/github/Settings-Tools/config/.gitignore ./"
-
+alias gitlog='git log --graph --decorate --oneline --abbrev-commit --no-merges --date=short  --pretty=format:"%Cred%h%Creset%C(yellow)%d%Creset | %Cgreen%ad%Creset | %s %C(yellow)[%an]%Creset"'
 
 #blog
 alias zixieblogstart='cd ~/zixie/github/blog/ && echo jekyll server &&  jekyll server'
