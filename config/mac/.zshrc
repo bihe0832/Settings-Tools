@@ -259,20 +259,6 @@ alias svndel='svn --force del'
 alias shakebaRoot='cd ~/zixie/github/shakeba_new && pwd'
 alias pfkey='echo "url:http://tool.chinaz.com/tools/urlencode.aspx \necho -n \"openid_openkey_offerid_pf_KEY\” | md5 -r"'
 
-#ws
-alias wsclear='adb shell pm clear com.tencent.weishi'
-alias wsuninstall='adb uninstall com.tencent.weishi'
-
-#alias wsdel='adb shell input tap 1000 1500 && sleep 1 && adb shell input tap 390 1800 && sleep 1 && adb shell input tap 570 1850'
-alias wsdel='adb shell input tap 1000 1700 && sleep 1 && adb shell input tap 390 1800 && sleep 1 && adb shell input tap 570 1850'
-fun wsdellist() {
-    for ((i=0; i < $1; i++)) {
-        wsdel
-    }
-}
-
-
-
 
 #PATH
 
@@ -318,9 +304,9 @@ export JAVA_HOME=$JDK8
 export JAVA_OPTS="-server -Xms1g -Xmx4g -XX:MaxPermSize=1g"
 
 #gradle
-export GRADLE_HOME=~/zixie/lib/gradle/
-export GRADLE_BASE=~/zixie/lib/gradle
-export GRADLE_USER_HOME=~/zixie/lib/gradle/
+export GRADLE_HOME=~/lib/gradle/
+export GRADLE_BASE=~/lib/gradle
+export GRADLE_USER_HOME=~/lib/gradle/
 export PATH=${GRADLE_HOME}/bin:$PATH
 
 #node
@@ -329,6 +315,9 @@ export PATH='/usr/local/Cellar/node/10.11.0/bin':$PATH
 #gem
 export PATH="/usr/local/opt/ruby/bin:$PATH"
 export PATH="/usr/local/lib/ruby/gems/2.6.0/bin:$PATH"
+
+export PATH="/usr/local/opt/sqlite/bin:$PATH"
+export PATH="/usr/local/opt/openssl/bin:$PATH"
 
 #其余常量
 export SVN_EDITOR=vim
