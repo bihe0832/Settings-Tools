@@ -18,6 +18,12 @@ buildNumber.properties
 .mvn/timing.properties
 
 ######################
+# jekyll
+######################
+.jekyll-cache
+_site
+
+######################
 # 解决各类编辑器自动产生的文件
 ######################
 *.iml

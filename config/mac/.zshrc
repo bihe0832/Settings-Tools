@@ -309,8 +309,15 @@ export GRADLE_BASE=~/lib/gradle
 export GRADLE_USER_HOME=~/lib/gradle/
 export PATH=${GRADLE_HOME}/bin:$PATH
 
+#homebrew
+export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.aliyun.com/homebrew/homebrew-bottles"
+
 #node
 export PATH='/usr/local/Cellar/node/10.11.0/bin':$PATH
+alias cnpm="npm --registry=https://registry.npm.taobao.org \
+--cache=$HOME/.npm/.cache/cnpm \
+--disturl=https://npm.taobao.org/dist \
+--userconfig=$HOME/.cnpmrc"
 
 #gem
 export PATH="/usr/local/opt/ruby/bin:$PATH"
