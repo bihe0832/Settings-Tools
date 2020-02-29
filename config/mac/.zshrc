@@ -265,7 +265,7 @@ alias pfkey='echo "url:http://tool.chinaz.com/tools/urlencode.aspx \necho -n \"o
 #通用
 
 export PATH="/opt/local/bin:/usr/local/sbin":${PATH}
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/git/bin:/usr/local/Cellar/python/3.7.2/Frameworks/Python.framework/Versions/3.7/bin:"${PATH}
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/git/bin:'/Users/zixie/Library/Python/3.7/bin:"${PATH}
 export PATH=$(brew --prefix curl)/bin:$PATH
 
 #android

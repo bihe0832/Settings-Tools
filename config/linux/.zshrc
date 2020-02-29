@@ -102,7 +102,7 @@ alias grep="grep --color=auto"
 alias ping="ping -c 10 -i 0.5" #ping 十次，每次间隔0.5秒
 alias dates="date +%s && date +'%Y-%m-%d %H:%M:%S %W'"
 alias datesd="date +%s -d"
-alias wget="cd ~/zixie/temp && wget -P ~/zixie/temp"
+alias mywget="cd ~/zixie/temp && wget -P ~/zixie/temp"
 alias iconvgbk2utf8='iconv -f gbk -t utf8'
 alias iconvutf82gbk='iconv -f utf8 -t gbk'
 
