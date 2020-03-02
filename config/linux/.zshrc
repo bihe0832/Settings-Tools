@@ -135,6 +135,30 @@ alias zixieblogstart='cd ~/zixie/web/blog/ &&  git pull && echo jekyll server &&
 alias zixiewebroot='cd ~/zixie/web && pwd'
 alias zixiegame='cd ~/zixie/web/game/ && pwd'
 export ANDROID_HOME=~/zixie/lib/android-sdk-linux
-export PATH=${ANDROID_HOME}/tools/bin:$PATH
-export ANDROID_HOME=~/zixie/lib/android-sdk-linux
-export PATH=${ANDROID_HOME}/tools/bin:$PATH
+
+#android
+ANDROID_HOME=~/lib/android-sdk
+export ANDROID_HOME
+
+ANDROID_SDK=~/lib/android-sdk
+export ANDROID_SDK
+
+ANDROIDNDK_LINUX_R16B=~/lib/aandroid-ndk-r16b
+export ANDROIDNDK_LINUX_R16B
+
+ANDROID_TOOLS=$ANDROID_HOME/tools
+export ANDROID_TOOLS
+
+ANDROID_PLATFORM_TOOLS=$ANDROID_HOME/platform-tools
+export ANDROID_PLATFORM_TOOLS
+
+ANDROID_NDK_HOME=${ANDROIDNDK_LINUX_R16B}
+export ANDROID_NDK_HOME
+
+ANDROID_NDK_CMD=${ANDROID_NDK_HOME}/ndk-build
+export ANDROID_NDK_CMD
+
+DEX2JAR_HOME=~/lib/dex2jar-2.0
+export DEX2JAR_HOME
+
+export PATH=$ANDROID_HOME:$ANDROID_PLATFORM_TOOLS:$ANDROID_NDK_HOME:$ANDROID_NDK_CMD:$ANDROID_TOOLS:$DEX2JAR_HOME:${PATH}
