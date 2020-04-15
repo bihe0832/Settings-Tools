@@ -193,11 +193,10 @@ alias zixieblogroot='cd ~/zixie/github/blog/_posts && pwd'
 alias eclipse='open -n /Applications/eclipse/Eclipse.app/'
 
 #jar
-alias zixiejargetpackageinfo='java -jar ~/lib/GetApkInfo.jar'
+alias zixiejargetpackageinfo='java -jar ~/zixie/github/Android-GetAPKInfo/GetAPKInfo.jar'
 alias zixiejargetchannel='java -jar ~/lib/apkChannel.jar'
 alias zixiejargetimginfo='java -jar ~/lib/getImgInfo.jar'
-alias zixiejarcheckandroidv2='java -jar ~/lib/CheckAndroidV2Signature.jar'
-alias zixiejarcheckandroidv2byapksig='java -jar ~/lib/CheckAndroidV2SignatureByAPKSig.jar'
+alias zixiejarcheckandroidv2='java -jar ~/zixie/github/Android-GetAPKInfo/CheckAndroidSignature.jar'
 alias zixiejartinyjpg='java -jar ~/lib/tinyjpg.jar'
 alias zixiegifrezise='gifsicle --colors=64 --resize-fit-height=600 '
 alias zixieshowphoto='java -jar ~/lib/managePhoto.jar --show '
