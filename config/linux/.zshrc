@@ -162,3 +162,7 @@ DEX2JAR_HOME=~/lib/dex2jar-2.0
 export DEX2JAR_HOME
 
 export PATH=$ANDROID_HOME:$ANDROID_PLATFORM_TOOLS:$ANDROID_NDK_HOME:$ANDROID_NDK_CMD:$ANDROID_TOOLS:$DEX2JAR_HOME:${PATH}
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" 
