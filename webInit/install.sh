@@ -34,13 +34,6 @@ cp -fr ~/zixie/github/Settings-Tools/config/.oh-my-zsh/ ~/
 cp -fr ~/zixie/github/Settings-Tools/config/linux/.zshrc ~/
 chsh -s /bin/zsh
 
-sudo yum -y install tree
-sudo yum -y install rz
-sudo yum -y install lrzsz
-
-sudo yum update
-sudo yum -y install nginx
-sudo yum -y install php
-sudo yum -y install mysql
-sudo yum -y install php-fpm
-sudo yum -y install mysql-server
+/bin/bash ~/zixie/github/Settings-Tools/webInit/install_env.sh
+/bin/bash ~/zixie/github/Settings-Tools/webInit/install_node.sh
+/bin/bash ~/zixie/github/Settings-Tools/webInit/install_jekyll.sh
