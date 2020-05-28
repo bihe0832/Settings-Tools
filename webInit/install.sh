@@ -18,6 +18,13 @@ sudo yum -y install git
 
 cd ~/
 mkdir temp 
+if [ ! -d "~/zixie" ]; then
+  mkdir ~/zixie
+fi
+if [ ! -d "~/zixie/github" ]; then
+  mkdir ~/zixie/github/
+fi
+
 cd ~/zixie/github/
 checkResult
 if [ ! -d "./Settings-Tools" ]; then
