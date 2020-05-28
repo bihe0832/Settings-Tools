@@ -13,8 +13,8 @@ function checkResult() {
 }  
 #zsh git
 sudo yum update
-sudo yum install zsh
-sudo yum install git
+sudo yum -y install zsh
+sudo yum -y install git
 
 cd ~/
 mkdir temp 
@@ -27,9 +27,9 @@ cp -fr ~/zixie/github/Settings-Tools/config/.oh-my-zsh/ ~/
 cp -fr ~/zixie/github/Settings-Tools/config/linux/.zshrc ~/
 chsh -s /bin/zsh
 
-sudo yum install tree
-sudo yum install rz
-sudo yum install lrzsz
+sudo yum -y install tree
+sudo yum -y install rz
+sudo yum -y install lrzsz
 
 # 卸载旧版本的nodejs
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
@@ -46,11 +46,11 @@ npm install pm2 -g
 
 
 sudo yum update
-sudo yum install nginx
-sudo yum install php
-sudo yum install mysql
-sudo yum install php-fpm
-sudo yum install mysql-server
+sudo yum -y install nginx
+sudo yum -y install php
+sudo yum -y install mysql
+sudo yum -y install php-fpm
+sudo yum -y install mysql-server
 
 gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
 \curl -sSL https://get.rvm.io | bash -s stable
