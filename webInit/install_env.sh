@@ -22,4 +22,5 @@ sudo yum -y install nginx
 sudo yum -y install php
 sudo yum -y install mysql
 sudo yum -y install php-fpm
+sudo rpm -Uvh http://dev.mysql.com/get/mysql-community-release-el7-5.noarch.rpm
 sudo yum -y install mysql-server
