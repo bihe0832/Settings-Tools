@@ -15,6 +15,7 @@ function checkResult() {
 sudo yum update
 sudo yum -y install zsh
 sudo yum -y install git
+git config credential.helper store
 
 cd ~/
 mkdir temp 
