@@ -7,6 +7,8 @@ for file in ./*
 do
 	cd ~/zixie/github/$file
 	echo `pwd`"/ start to check:"
+	git config --add core.filemode false
+	git config --global  --add core.filemode false
 	if [ `git status | wc -l` -gt 4 ]
 	then
 		echo "==================================" 
