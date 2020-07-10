@@ -1,11 +1,5 @@
 {
-"Profiles": [
-{
-  "Ansi 7 Color" : {
-    "Green Component" : 0.73333334922790527,
-    "Red Component" : 0.73333334922790527,
-    "Blue Component" : 0.73333334922790527
-  },
+  "Transparency" : 0,
   "Tags" : [
 
   ],
@@ -14,15 +8,11 @@
     "Red Component" : 0.3333333432674408,
     "Blue Component" : 1
   },
-  "Ansi 8 Color" : {
-    "Green Component" : 0.3333333432674408,
-    "Red Component" : 0.3333333432674408,
-    "Blue Component" : 0.3333333432674408
-  },
-  "Ansi 9 Color" : {
-    "Green Component" : 0.3333333432674408,
-    "Red Component" : 1,
-    "Blue Component" : 0.3333333432674408
+  "Normal Font" : "Monaco 18",
+  "Ansi 4 Color" : {
+    "Green Component" : 0,
+    "Red Component" : 0,
+    "Blue Component" : 0.73333334922790527
   },
   "Bold Color" : {
     "Green Component" : 1,
@@ -37,7 +27,7 @@
   "Use Non-ASCII Font" : false,
   "Rows" : 25,
   "Default Bookmark" : "No",
-  "Blend" : 0.4860925418814433,
+  "Blend" : 0.14539404800257733,
   "Non-ASCII Anti Aliased" : true,
   "Use Bright Bold" : true,
   "Ansi 10 Color" : {
@@ -58,13 +48,14 @@
     "Blue Component" : 1
   },
   "Foreground Color" : {
-    "Red Component" : 0.10000000000000001,
+    "Red Component" : 0.80000000000000004,
     "Color Space" : "sRGB",
-    "Blue Component" : 0.10000000000000001,
+    "Blue Component" : 0.80000000000000004,
     "Alpha Component" : 1,
-    "Green Component" : 0.10000000000000001
+    "Green Component" : 0.80000000000000004
   },
   "Working Directory" : "\/Users\/zixie",
+  "Use Tab Color" : false,
   "Blinking Cursor" : true,
   "Disable Window Resizing" : true,
   "Sync Title" : false,
@@ -99,11 +90,11 @@
     "Blue Component" : 0
   },
   "Background Color" : {
-    "Red Component" : 0.29999999999999999,
+    "Red Component" : 0,
     "Color Space" : "sRGB",
-    "Blue Component" : 0.29999999999999999,
+    "Blue Component" : 0,
     "Alpha Component" : 1,
-    "Green Component" : 0.29999999999999999
+    "Green Component" : 0
   },
   "Character Encoding" : 4,
   "Ansi 11 Color" : {
@@ -281,6 +272,7 @@
   "Blink Allowed" : true,
   "Background Image Location" : "",
   "Blur" : true,
+  "Cursor Boost" : 0,
   "Scrollback Lines" : 1000,
   "Send Code When Idle" : false,
   "Close Sessions On End" : true,
@@ -314,37 +306,43 @@
     "Red Component" : 0,
     "Blue Component" : 0
   },
-  "Ansi 1 Color" : {
-    "Green Component" : 0,
-    "Red Component" : 0.73333334922790527,
-    "Blue Component" : 0
-  },
-  "Horizontal Spacing" : 1,
-  "Transparency" : 0.14831654505076142,
-  "Ansi 4 Color" : {
-    "Green Component" : 0,
-    "Red Component" : 0,
-    "Blue Component" : 0.73333334922790527
-  },
-  "Guid" : "2FD6BD96-B1D9-4F64-A35B-80A02EB6D1B9",
+  "Guid" : "61F5683D-4059-4581-B564-F8EE10967BF4",
   "Ansi 2 Color" : {
     "Green Component" : 0.73333334922790527,
     "Red Component" : 0,
     "Blue Component" : 0
   },
+  "Ansi 1 Color" : {
+    "Green Component" : 0,
+    "Red Component" : 0.73333334922790527,
+    "Blue Component" : 0
+  },
+  "Custom Directory" : "No",
   "Ansi 3 Color" : {
     "Green Component" : 0.73333334922790527,
     "Red Component" : 0.73333334922790527,
     "Blue Component" : 0
   },
-  "Normal Font" : "Monaco 18",
-  "Custom Directory" : "No",
+  "Horizontal Spacing" : 1,
+  "Ansi 7 Color" : {
+    "Green Component" : 0.73333334922790527,
+    "Red Component" : 0.73333334922790527,
+    "Blue Component" : 0.73333334922790527
+  },
+  "Ansi 8 Color" : {
+    "Green Component" : 0.3333333432674408,
+    "Red Component" : 0.3333333432674408,
+    "Blue Component" : 0.3333333432674408
+  },
+  "Ansi 9 Color" : {
+    "Green Component" : 0.3333333432674408,
+    "Red Component" : 1,
+    "Blue Component" : 0.3333333432674408
+  },
   "Right Option Key Sends" : 0,
   "Ansi 6 Color" : {
     "Green Component" : 0.73333334922790527,
     "Red Component" : 0,
     "Blue Component" : 0.73333334922790527
   }
-}
-]
 }
