@@ -342,6 +342,6 @@ export isOfficial=true
 export isPreOfficial=false
 export channel="000000 111111"
 export channelType="debug official"
-export appNo=2
+export appNo=7
 export TAG="Tag_MNA_3.1.7_3970"
 export listAll=true
