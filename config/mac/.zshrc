@@ -58,14 +58,19 @@ setopt PUSHD_IGNORE_DUPS
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git svn adb ant brew github gitignore gradle )
+
+plugins=(cp adb brew github svn ant autojump gitignore gradle command-not-found sublime)
+
+bindkey ',' autosuggest-accept
 
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
+
+source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh	
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh	
 source $ZSH/oh-my-zsh.sh
-# source /usr/local/opt/git-extras/share/git-extras/git-extras-completion.zsh
 
 # You may need to manually set your language environment
 export LC_ALL=en_US.UTF-8
