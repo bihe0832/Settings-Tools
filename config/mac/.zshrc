@@ -335,8 +335,8 @@ export SVN_EDITOR=vim
 export EDITOR=vim
 #RDM
 export MajorVersion=1
-export MinorVersion=0
-export FixVersion=2
+export MinorVersion=1
+export FixVersion=0
 export BuildNo=0
 export isBuildLib=false
 export isCompletedBuild=false
@@ -347,7 +347,7 @@ export isOfficial=true
 export isPreOfficial=false
 export channel="000000 111111"
 export channelType="debug official"
-export appNo=7
+export appNo=1
 export TAG="Tag_MNA_3.1.7_3970"
 export listAll=true
 
