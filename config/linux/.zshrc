@@ -3,6 +3,7 @@
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
+source $ZSH/oh-my-zsh.sh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -45,6 +46,16 @@ ZSH_THEME="robbyrussell"
 HIST_STAMPS="yyyy-mm-dd"
 HISTSIZE=3000
 SAVEHIST=3000
+# 以附加的方式写入历史纪录 
+setopt INC_APPEND_HISTORY 
+# 如果连续输入的命令相同 ， 历史纪录中只保留一个 
+setopt HIST_IGNORE_DUPS 
+# 为历史纪录中的命令添加时间戳 
+setopt EXTENDED_HISTORY
+# 启用 cd 命令的历史纪录 ，cd -[TAB] 进入历史路径 
+setopt AUTO_PUSHD 
+# 相同的历史路径只保留一个 
+setopt PUSHD_IGNORE_DUPS
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
@@ -59,7 +70,6 @@ plugins=(git svn adb ant brew github gitignore gradle )
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
-source $ZSH/oh-my-zsh.sh
 #source /usr/local/opt/git-extras/share/git-extras/git-extras-completion.zsh
 
 # You may need to manually set your language environment
@@ -97,6 +107,7 @@ alias cls='clear'
 alias ll='ls -l'
 alias la='ls -a'
 alias vi='vim'
+
 alias javac="javac -J-Dfile.encoding=utf8"
 alias grep="grep --color=auto"
 alias ping="ping -c 10 -i 0.5" #ping 十次，每次间隔0.5秒
@@ -114,6 +125,7 @@ fun upper() {
 fun lower() {
 	echo $1 | tr A-Z a-z
 }
+
 alias his='history | grep '
 alias temp='cd ~/zixie/temp && pwd'
 
@@ -121,7 +133,6 @@ alias temp='cd ~/zixie/temp && pwd'
 alias zshback='cp ~/.zshrc ~/zixie/github/Settings-Tools/config/linux' 
 alias zshrestore='cp ~/zixie/github/Settings-Tools/config/linux/.zshrc ~/ && source ~/.zshrc'
 alias zshedit='vi ~/zixie/github/Settings-Tools/config/.zshrc'
-alias configln='ln -s ~/zixie/github/Settings-Tools/config ~/zixie/config'
 
 #vi
 alias zixieviback='cp ~/.vimrc ~/zixie/github/Settings-Tools/config'
@@ -129,12 +140,6 @@ alias zixievirestore='cp ~/zixie/github/Settings-Tools/config/.vimrc ~/'
 
 #blog
 alias zixieblogstart='cd ~/zixie/web/blog/ &&  git pull && echo jekyll server &&  jekyll server'
-
-
-#web
-alias zixiewebroot='cd ~/zixie/web && pwd'
-alias zixiegame='cd ~/zixie/web/game/ && pwd'
-export ANDROID_HOME=~/zixie/lib/android-sdk-linux
 
 #android
 ANDROID_HOME=~/lib/android-sdk

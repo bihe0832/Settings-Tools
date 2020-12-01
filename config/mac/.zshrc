@@ -1,5 +1,6 @@
 # Path to your oh-my-zsh installation.
 export ZSH=~/.oh-my-zsh
+source $ZSH/oh-my-zsh.sh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -67,10 +68,8 @@ bindkey ',' autosuggest-accept
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
-
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh	
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh	
-source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
 export LC_ALL=en_US.UTF-8
@@ -181,7 +180,6 @@ alias zixieviback='cp ~/.vimrc ~/zixie/github/Settings-Tools/config'
 alias zixievirestore='cp ~/zixie/github/Settings-Tools/config/.vimrc ~/'
 
 #git
-alias zixiegittencent='cp ~/zixie/github/Settings-Tools/config/.gitTencentConfig ~/.gitconfig'
 alias zixiegitdefault='cp -r ~/zixie/github/Settings-Tools/config/.gitdefaultconfig ~/.gitconfig'
 alias zixiegitcheck="/bin/bash ~/zixie/github/Settings-Tools/tools/check_github.sh"
 alias zixiegitignore="cp -r ~/zixie/github/Settings-Tools/config/.gitignore ./"
@@ -300,7 +298,7 @@ export DEX2JAR_HOME
 export PATH=$ANDROID_HOME:$ANDROID_PLATFORM_TOOLS:$ANDROID_NDK_HOME:$ANDROID_NDK_CMD:$ANDROID_TOOLS:$DEX2JAR_HOME:${PATH}
 
 #java
-JDK6=`/usr/libexec/java_home -v 1.6`
+# JDK6=`/usr/libexec/java_home -v 1.6`
 JDK7=`/usr/libexec/java_home -v 1.7`
 JDK8=`/usr/libexec/java_home -v 1.8`
 JDK_AS=/Applications/Android\ Studio.app/Contents/jre/jdk/Contents/Home
@@ -312,9 +310,6 @@ export GRADLE_HOME=~/lib/gradle/
 export GRADLE_BASE=~/lib/gradle
 export GRADLE_USER_HOME=~/lib/gradle/
 export PATH=${GRADLE_HOME}/bin:$PATH
-
-#homebrew
-export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.aliyun.com/homebrew/homebrew-bottles"
 
 #node
 export PATH='/usr/local/Cellar/node/10.11.0/bin':$PATH
@@ -350,5 +345,3 @@ export channelType="debug official"
 export appNo=1
 export TAG="Tag_MNA_3.1.7_3970"
 export listAll=true
-
-pokemon pikachu
