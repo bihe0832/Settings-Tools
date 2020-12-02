@@ -1,12 +1,12 @@
 # Path to your oh-my-zsh installation.
 export ZSH=~/.oh-my-zsh
-source $ZSH/oh-my-zsh.sh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 ZSH_THEME="robbyrussell"
+source $ZSH/oh-my-zsh.sh
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -267,7 +267,7 @@ alias pfkey='echo "url:http://tool.chinaz.com/tools/urlencode.aspx \necho -n \"o
 #通用
 
 export PATH="/opt/local/bin:/usr/local/sbin":${PATH}
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/git/bin:'/Users/zixie/Library/Python/3.7/bin:"${PATH}
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/git/bin:"${PATH}
 export PATH=$(brew --prefix curl)/bin:$PATH
 
 #android
@@ -319,11 +319,17 @@ alias cnpm="npm --registry=https://registry.npm.taobao.org \
 --userconfig=$HOME/.cnpmrc"
 
 #gem
-export PATH="/usr/local/opt/ruby/bin:$PATH"
 export PATH="/usr/local/lib/ruby/gems/2.6.0/bin:$PATH"
+export PATH="/usr/local/opt/ruby@2.6/bin:$PATH"
+#export LDFLAGS="-L/usr/local/opt/ruby@2.6/lib"
+#export CPPFLAGS="-I/usr/local/opt/ruby@2.6/include"
+#export PKG_CONFIG_PATH="/usr/local/opt/ruby@2.6/lib/pkgconfig"
 
 export PATH="/usr/local/opt/sqlite/bin:$PATH"
 export PATH="/usr/local/opt/openssl/bin:$PATH"
+
+#python
+export PATH="/Users/zixie/Library/Python/3.7/bin:"${PATH}
 
 #其余常量
 export SVN_EDITOR=vim
@@ -331,7 +337,7 @@ export EDITOR=vim
 #RDM
 export MajorVersion=1
 export MinorVersion=1
-export FixVersion=0
+export FixVersion=1
 export BuildNo=0
 export isBuildLib=false
 export isCompletedBuild=false
