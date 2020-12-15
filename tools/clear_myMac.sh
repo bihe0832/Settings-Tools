@@ -6,15 +6,15 @@ echo "size:"$size
 echo "path:"$sourcepath
 echo "" > ~/temp/a.log
  
-cd ~/Documents && echo "~/Documents" >> ~/temp/a.log
+cd ~/zixie && echo "~/zixie" >> ~/temp/a.log
 
 sudo du -sm * | sort -r | awk -v awk_var="$size" '{if ($1>awk_var) print $0}' >> ~/temp/a.log
 
-cd ~/Documents/Library && echo "~/Documents/Library" >> ~/temp/a.log
+cd ~/zixie/lib && echo "~/zixie/lib" >> ~/temp/a.log
 
 sudo du -sm * | sort -r | awk -v awk_var="$size" '{if ($1>awk_var) print $0}' >> ~/temp/a.log
 
-cd ~/Documents/temp && echo "~/Documents/temp" >> ~/temp/a.log
+cd ~/zixie/temp && echo "~/zixie/temp" >> ~/temp/a.log
 
 sudo du -sm * | sort -r | awk -v awk_var="$size" '{if ($1>awk_var) print $0}' >> ~/temp/a.log
 
@@ -28,6 +28,6 @@ sudo du -sm * | sort -r | awk -v awk_var="$size" '{if ($1>awk_var) print $0}' >>
 
 cat ~/temp/a.log
 
-# cd $sourcepath
+cd $sourcepath
 
-# sudo du -sm * | sort -r | awk -v awk_var="$size" '{if ($1>awk_var) print $0}' 
+sudo du -sm * | sort -r | awk -v awk_var="$size" '{if ($1>awk_var) print $0}' 
