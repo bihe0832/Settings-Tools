@@ -204,6 +204,8 @@ alias zixiejartinyjpg='java -jar ~/lib/tinyjpg.jar'
 alias zixiegifrezise='gifsicle --colors=64 --resize-fit-height=600 '
 alias zixieshowphoto='java -jar ~/lib/managePhoto.jar --show '
 alias zixiemanagephoto='java -jar ~/lib/managePhoto.jar --manage '
+alias zixieshowvideo='~/zixie/lib/ffprobe -v quiet -show_format '
+
 
 #android 
 alias zixieandroidapktoold='java -jar -Duser.language=en -Duser.home=$ANDROID_HOME/build-tools/25.0.2 ~/lib/apktool.jar d -f '
