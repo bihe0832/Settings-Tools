@@ -220,11 +220,9 @@ fun zixieandroidmakejar() {
 }
 alias zixieandroidaaptd='$ANDROID_HOME/build-tools/26.0.1/aapt d badging'
 alias zixieandroidremoteshare='java -jar ~/lib/asm.jar $ANDROID_HOME'
-alias zixieandroidgradlelocalize='cp -r ./build.gradle ./build_back.gradle && cp -r ~/settings/as/zixie-build.gradle ./build.gradle && cp -r ~/settings/as/zixie-local.properties ./local.properties && cp -r ~/settings/as/zixie-gradle-wrapper.properties ./gradle/wrapper/gradle-wrapper.properties'
-alias zixieandroidgradlelocalizeoa='cp -r ./build.gradle ./build_back.gradle && cp -r ~/settings/as/oa-build.gradle ./build.gradle && cp -r ~/settings/as/zixie-local.properties ./local.properties && cp -r ~/settings/as/oa-gradle-wrapper.properties ./gradle/wrapper/gradle-wrapper.properties'
-alias zixieandroidgradlenormal='cp -r ./build.gradle ./build_back.gradle && cp -r ~/settings/as/normal-build.gradle ./build.gradle && rm ./local.properties && cp -r ~/settings/as/normal-gradle-wrapper.properties ./gradle/wrapper/gradle-wrapper.properties'
+alias zixieandroidgradlelocalize='cp -r ~/settings/as/zixie-local.properties ./local.properties'
 alias zixieandroidgradledebug='chmod +x ./gradlew && ./gradlew clean assembleDebug '
-
+alias zixieandroidgradlecache='rm -fr ~/zixie/lib/gradle/caches && rm -fr ~/zixie/lib/gradle/daemon && rm -fr ~/zixie/lib/gradle/native'
 
 #android adb 
 alias adbSingle='alias adb="adb"'
