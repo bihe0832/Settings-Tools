@@ -59,7 +59,7 @@ mkdir github
 cd github
 git clone https://github.com/bihe0832/bihe0832.github.io.git blog
 git clone https://github.com/bihe0832/Settings-Tools.git
-git clone git clone https://github.com/bihe0832/gitbook.git
+git clone https://github.com/bihe0832/gitbook.git
 cd  ~/zixie/github/gitbook
 gitbook install
 cp -fr ~/zixie/github/Settings-Tools/config/.oh-my-zsh ~/.oh-my-zsh
