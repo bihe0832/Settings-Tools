@@ -318,6 +318,9 @@ alias cnpm="npm --registry=https://registry.npm.taobao.org \
 --disturl=https://npm.taobao.org/dist \
 --userconfig=$HOME/.cnpmrc"
 
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 #gem
 export PATH="/usr/local/lib/ruby/gems/2.6.0/bin:$PATH"
 export PATH="/usr/local/opt/ruby@2.6/bin:$PATH"
@@ -344,10 +347,9 @@ export isCompletedBuild=false
 export isDebug=true
 export isReleaseTest=false
 export isReleaseOfficial= false
-export isOfficial=false
+export isOfficial=true
 export isPreOfficial=false
 export channel="000000 111111"
 export channelType="debug official"
-export appNo=1
-export TAG="Tag_MNA_3.1.7_3970"
+export appNo=2
 export listAll=true

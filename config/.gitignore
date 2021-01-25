@@ -50,3 +50,9 @@ gradle.properties
 # mac
 ######################
 .DS_Store
+
+######################
+# gitbook
+######################
+_book
+node_modules
