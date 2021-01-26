@@ -1,6 +1,8 @@
 
 #!/bin/zsh
 # author zixie code@bihe0832.com
+#   source <(curl -s https://raw.githubusercontent.com/bihe0832/Settings-Tools/master/tools/mac_init.sh)
+
 
 # 文件隐藏显示
 defaults write com.apple.finder AppleShowAllFiles -bool true
@@ -8,7 +10,8 @@ defaults write com.apple.finder AppleShowAllFiles -bool true
 # 工作环境
 cd /Volumes/Document
 mkdir Documents
-cd Documents
+cd /Volumes/Document/Documents
+rm -fr ~/Documents
 ln -s /Volumes/Document/Documents ~/Documents
 ln -s ~/Documents ~/zixie
 ln -s /Users/zixie/lib ~/zixie/lib
@@ -61,7 +64,10 @@ git clone https://github.com/bihe0832/bihe0832.github.io.git blog
 git clone https://github.com/bihe0832/Settings-Tools.git
 git clone https://github.com/bihe0832/gitbook.git
 cd  ~/zixie/github/gitbook
-gitbook install
+echo "favicon
+donate" | xargs -I {} npm install gitbook-plugin-{}
+npm install
+
 cp -fr ~/zixie/github/Settings-Tools/config/.oh-my-zsh ~/.oh-my-zsh
 cp -fr ~/zixie/github/Settings-Tools/config/mac/.zshrc ~/.zshrc
 source ~/.zshrc
