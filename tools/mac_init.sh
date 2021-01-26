@@ -58,8 +58,9 @@ nrm use taobao
 npm install gitbook-cli -g
 
 # 环境配置
+cd  ~/zixie/
 mkdir github
-cd github
+cd ~/zixie/github
 git clone https://github.com/bihe0832/bihe0832.github.io.git blog
 git clone https://github.com/bihe0832/Settings-Tools.git
 git clone https://github.com/bihe0832/gitbook.git
