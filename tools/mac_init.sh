@@ -52,11 +52,6 @@ gem install ffi -- --disable-system-libffi
 gem install jekyll
 gem install github-pages
 
-# 云端笔记
-cd ~/temp
-mkdir bootsnote
-# open /Applications/WeiyunResona.app
-
 # node
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
 export NVM_DIR="$HOME/.nvm"
@@ -77,7 +72,34 @@ npm install gitbook-cli -g
 
 # apache
 sudo chmod -R 755 /Volumes/Document/Documents/web/
+
 sudo cp -fr ~/zixie/github/Settings-Tools/config/httpd-vhosts.conf /etc/apache2/extra/httpd-vhosts.conf
+cp -fr /etc/apache2/httpd.conf /etc/apache2/httpd.conf.bak
+src="#Include \\/private\\/etc\\/apache2\\/extra\\/httpd-vhosts.conf"
+dst="Include \\/private\\/etc\\/apache2\\/extra\\/httpd-vhosts.conf"
+cat /etc/apache2/httpd.conf | sed "s/$src/$dst/g" > ~/zixie/temp/httpd.conf
+sudo mv -f ~/zixie/temp/httpd.conf /etc/apache2/httpd.conf
+
+cp -fr /etc/hosts /etc/hosts.bak
+if [ `cat /etc/hosts | grep "local.bihe0832.com" | wc -l` -gt 0 ]
+then
+    src="[0-9]*\.[0-9]*\.[0-9]*\.[0-9]*\ local.bihe0832.com"
+    dst="127.0.0.1 local.bihe0832.com"
+    cat /etc/hosts | sed "s/$src/$dst/g" > ~/zixie/temp/hosts
+    cat ~/zixie/temp/hosts
+    sudo mv -f ~/zixie/temp/hosts /etc/hosts
+else
+    cp -fr /etc/hosts ~/zixie/temp/hosts
+    echo "127.0.0.1 local.bihe0832.com" >> ~/zixie/temp/hosts
+    sudo mv -f ~/zixie/temp/hosts /etc/hosts
+fi
+cat /etc/hosts
+sudo apachectl restart
 
 brew cleanup
 brew doctor
+
+# 云端笔记
+cd ~/temp
+mkdir bootsnote
+open /Applications/WeiyunResona.app
