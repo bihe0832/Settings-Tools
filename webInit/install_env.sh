@@ -17,6 +17,9 @@ sudo yum -y install tree
 sudo yum -y install rz
 sudo yum -y install lrzsz
 
+/usr/sbin/groupadd -f www
+/usr/sbin/useradd -g www www
+
 sudo yum update
 sudo yum -y install nginx
 sudo yum -y install php
