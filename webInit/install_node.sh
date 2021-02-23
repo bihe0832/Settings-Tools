@@ -23,5 +23,11 @@ cd ~/.nvm
 git fetch -p
 git checkout $(git describe --tags `git rev-list --tags --max-count=1`)
 nvm --version
-nvm use node
-npm install pm2 -g
+
+npm config delete proxy
+npm config set registry https://registry.npm.taobao.org -g
+npm config get registry
+npm config get proxy
+npm install -g nrm
+nrm test
+nrm use taobao
