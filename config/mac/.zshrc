@@ -182,6 +182,8 @@ alias zixievirestore='cp ~/zixie/github/Settings-Tools/config/.vimrc ~/'
 #git
 alias zixiegitdefault='cp -r ~/zixie/github/Settings-Tools/config/.gitdefaultconfig ~/.gitconfig'
 alias zixiegitcheck="/bin/bash ~/zixie/github/Settings-Tools/tools/check_github.sh"
+alias zixiegitcheckandupdate="/bin/bash ~/zixie/github/Settings-Tools/tools/check_github.sh 1"
+
 alias zixiegitignore="cp -r ~/zixie/github/Settings-Tools/config/.gitignore ./"
 alias gitlogl="git log --graph --decorate --oneline --abbrev-commit --no-merges --date=short  --pretty=format:'%Cred%h%Creset%C(yellow)%d%Creset | %Cgreen%ad%Creset | %s %C(yellow)[%an]%Creset'"
 alias gitlogc="git log --graph --decorate --abbrev-commit --no-merges --date=format:'%Y-%m-%d %H:%M:%S'  --stat  --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Cblue %s %Cgreen(%cd) %C(bold blue)<%an>%Creset'"

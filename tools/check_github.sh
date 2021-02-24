@@ -1,7 +1,6 @@
 #/bin/bash
 
 cd ~/zixie/github
-
 echo "============ zixe check git status start ======================"
 for file in ./*
 do
@@ -14,6 +13,10 @@ do
 		echo "==================================" 
 		echo `pwd`"/ have uncommit changes:" 
 		git status
+	else
+		if [ "$1"x != x ]; then
+			git pull --rebase --autostash
+		fi
 	fi
 done
 echo "============ zixe check git status finished ======================"
