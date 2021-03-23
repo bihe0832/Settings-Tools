@@ -29,7 +29,7 @@ fi
 cd ~/zixie/github/
 checkResult
 if [ ! -d "./Settings-Tools" ]; then
-  git clone https://github.com/bihe0832/Settings-Tools.git
+  git clone https://github.com.cnpmjs.org/bihe0832/Settings-Tools.git
 fi
 cp -fr ~/zixie/github/Settings-Tools/config/.oh-my-zsh/ ~/
 cp -fr ~/zixie/github/Settings-Tools/config/linux/.zshrc ~/
