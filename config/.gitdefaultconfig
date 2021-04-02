@@ -1,15 +1,27 @@
-[filter "media"]
-	clean = git-media-clean %f
-	smudge = git-media-smudge %f
+# This is Git's per-user configuration file.
 [user]
 	name = 子勰
 	email = code@bihe0832.com
+[filter "media"]
+	clean = git-media-clean %f
+	smudge = git-media-smudge %f
+
 [filter "hawser"]
 	clean = git hawser clean %f
 	smudge = git hawser smudge %f
 	required = true
-[http]
+
 [filter "lfs"]
 	clean = git lfs clean %f
 	smudge = git lfs smudge %f
 	required = true
+[core]
+	excludesfile = .gitignore_global
+	autocrlf = input
+	safecrlf = true
+	filemode = false
+
+[alias]
+	logl = log --graph --decorate --oneline --abbrev-commit --no-merges --date=short  --pretty=format:'%Cred%h%Creset%C(yellow)%d%Creset | %Cgreen%ad%Creset | %s %C(yellow)[%an]%Creset'
+	logc = log --graph --decorate --abbrev-commit --no-merges --date=format:'%Y-%m-%d %H:%M:%S'  --stat  --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Cblue %s %Cgreen(%cd) %C(bold blue)<%an>%Creset'
+	logme = log --graph --decorate --abbrev-commit --no-merges --date=short  --pretty=format:'%s' --after='1 week ago' --committer=hardyshi

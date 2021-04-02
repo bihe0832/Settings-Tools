@@ -180,7 +180,7 @@ alias zixieviback='cp ~/.vimrc ~/zixie/github/Settings-Tools/config'
 alias zixievirestore='cp ~/zixie/github/Settings-Tools/config/.vimrc ~/'
 
 #git
-alias zixiegitdefault='cp -r ~/zixie/github/Settings-Tools/config/.gitdefaultconfig ~/.gitconfig'
+alias zixiegitdefault='cp -r ~/zixie/github/Settings-Tools/config/.gitdefaultconfig ~/.gitconfig && cp -r ~/zixie/github/Settings-Tools/config/.gitignore ~/.gitignore_global'
 alias zixiegitcheck="/bin/bash ~/zixie/github/Settings-Tools/tools/check_github.sh"
 alias zixiegitcheckandupdate="/bin/bash ~/zixie/github/Settings-Tools/tools/check_github.sh 1"
 
@@ -349,9 +349,9 @@ export isCompletedBuild=false
 export isDebug=true
 export isReleaseTest=false
 export isReleaseOfficial= false
-export isOfficial=true
+export isOfficial=false
 export isPreOfficial=false
 export channel="000000 111111"
 export channelType="debug official"
-export appNo=2
+export appNo=voice
 export listAll=true
