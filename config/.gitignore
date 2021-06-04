@@ -57,3 +57,11 @@ gradle.properties
 ######################
 _book
 node_modules
+
+######################
+# CMake
+######################
+CMakeCache.txt
+CMakeFiles/
+Makefile
+cmake_install.cmake
