@@ -6,6 +6,7 @@
 
 # 文件隐藏显示
 defaults write com.apple.finder AppleShowAllFiles -bool true
+killAll Finder
 
 # 工作环境
 rm -fr ~/Documents
