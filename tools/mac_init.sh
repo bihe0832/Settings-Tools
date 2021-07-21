@@ -30,10 +30,6 @@ cd ~/zixie/github
 git clone https://github.com/bihe0832/bihe0832.github.io.git blog
 git clone https://github.com/bihe0832/Settings-Tools.git  --recursive
 git clone https://github.com/bihe0832/gitbook.git
-cd  ~/zixie/github/gitbook
-echo "favicon
-donate" | xargs -I {} npm install gitbook-plugin-{}
-npm install
 
 cp -fr ~/zixie/github/Settings-Tools/config/.oh-my-zsh ~/.oh-my-zsh
 cp -fr ~/zixie/github/Settings-Tools/config/mac/.zshrc ~/.zshrc
@@ -73,7 +69,12 @@ npm config get proxy
 npm install -g nrm
 nrm test
 nrm use taobao
+
 npm install gitbook-cli -g
+cd  ~/zixie/github/gitbook
+echo "favicon
+donate" | xargs -I {} npm install gitbook-plugin-{}
+npm install
 
 # apache
 sudo chmod -R 755 /Volumes/Document/Documents/web/
