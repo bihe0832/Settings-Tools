@@ -1,19 +1,20 @@
 
 #!/bin/zsh
 # author zixie code@bihe0832.com
-#   source <(curl -s https://raw.githubusercontent.com/bihe0832/Settings-Tools/master/tools/mac_init.sh)
+#   source <(curl -fsSL https://raw.githubusercontent.com/bihe0832/Settings-Tools/master/tools/mac_init.sh)
 
 
 # 文件隐藏显示
 defaults write com.apple.finder AppleShowAllFiles -bool true
 
 # 工作环境
+rm -fr ~/Documents
 cd /Volumes/Document
 mkdir Documents
 cd /Volumes/Document/Documents
-rm -fr ~/Documents
 ln -s /Volumes/Document/Documents ~/Documents
 ln -s ~/Documents ~/zixie
+ln -s /Volumes/Document/Documents/Library /Users/zixie/lib
 ln -s /Users/zixie/lib ~/zixie/lib
 cd /Volumes/Document/Documents
 mkdir web
@@ -27,7 +28,7 @@ cd  ~/zixie/
 mkdir github
 cd ~/zixie/github
 git clone https://github.com/bihe0832/bihe0832.github.io.git blog
-git clone https://github.com/bihe0832/Settings-Tools.git
+git clone https://github.com/bihe0832/Settings-Tools.git  --recursive
 git clone https://github.com/bihe0832/gitbook.git
 cd  ~/zixie/github/gitbook
 echo "favicon
@@ -38,16 +39,21 @@ cp -fr ~/zixie/github/Settings-Tools/config/.oh-my-zsh ~/.oh-my-zsh
 cp -fr ~/zixie/github/Settings-Tools/config/mac/.zshrc ~/.zshrc
 source ~/.zshrc
 
+
+# ruby
+sudo gem uninstall --all
+brew reinstall ruby@2.6
+source ~/.zshrc
+
 # 基础库安装
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
 brew reinstall autoconf gifsicle readline xz dos2unix thefuck tree wget sqlite zsh-syntax-highlighting autojump bat git-open zsh-autosuggestions
 brew update
 # python
 brew reinstall python@2 python3
 
 # jekyll
-sudo gem uninstall --all
-brew reinstall ruby@2.6
-source ~/.zshrc
 gem install ffi -- --disable-system-libffi 
 gem install jekyll
 gem install github-pages
@@ -68,7 +74,6 @@ npm install -g nrm
 nrm test
 nrm use taobao
 npm install gitbook-cli -g
-
 
 # apache
 sudo chmod -R 755 /Volumes/Document/Documents/web/
