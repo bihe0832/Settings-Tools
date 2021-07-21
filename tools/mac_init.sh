@@ -36,12 +36,6 @@ cp -fr ~/zixie/github/Settings-Tools/config/.oh-my-zsh ~/.oh-my-zsh
 cp -fr ~/zixie/github/Settings-Tools/config/mac/.zshrc ~/.zshrc
 source ~/.zshrc
 
-
-# ruby
-sudo gem uninstall --all
-brew reinstall ruby@2.6
-source ~/.zshrc
-
 # 基础库安装
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
@@ -49,6 +43,12 @@ brew reinstall autoconf gifsicle readline xz dos2unix thefuck tree wget sqlite z
 brew update
 # python
 brew reinstall python@2 python3
+
+# ruby
+sudo gem uninstall --all
+brew reinstall ruby@2.6
+source ~/.zshrc
+
 
 # jekyll
 gem install ffi -- --disable-system-libffi 
