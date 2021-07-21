@@ -34,7 +34,6 @@ git clone https://github.com/bihe0832/gitbook.git
 
 cp -fr ~/zixie/github/Settings-Tools/config/.oh-my-zsh ~/.oh-my-zsh
 cp -fr ~/zixie/github/Settings-Tools/config/mac/.zshrc ~/.zshrc
-source ~/.zshrc
 
 # 基础库安装
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -47,8 +46,6 @@ brew reinstall python@2 python3
 # ruby
 sudo gem uninstall --all
 brew reinstall ruby@2.6
-source ~/.zshrc
-
 
 # jekyll
 gem install ffi -- --disable-system-libffi 
