@@ -9,14 +9,14 @@ defaults write com.apple.finder AppleShowAllFiles -bool true
 killAll Finder
 
 # 工作环境
-rm -fr ~/Documents
 cd /Volumes/Document
 mkdir Documents
 cd /Volumes/Document/Documents
+rm -fr ~/Documents
 ln -s /Volumes/Document/Documents ~/Documents
-ln -s ~/Documents ~/zixie
+ln -s /Volumes/Document/Documents ~/zixie
 ln -s /Volumes/Document/Documents/Library /Users/zixie/lib
-ln -s /Users/zixie/lib ~/zixie/lib
+ln -s /Volumes/Document/Documents/Library ~/zixie/lib
 cd /Volumes/Document/Documents
 mkdir web
 mkdir temp
