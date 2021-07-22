@@ -38,7 +38,7 @@ cp -fr ~/zixie/github/Settings-Tools/config/mac/.zshrc ~/.zshrc
 # 基础库安装
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-brew reinstall autoconf gifsicle readline xz dos2unix thefuck tree wget sqlite zsh-syntax-highlighting autojump bat git-open zsh-autosuggestions
+brew install autoconf gifsicle readline xz dos2unix thefuck tree wget sqlite zsh-syntax-highlighting autojump bat git-open zsh-autosuggest-accept zsh-autosuggestions
 brew update
 # python
 brew reinstall python@2 python3
