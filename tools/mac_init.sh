@@ -12,7 +12,7 @@ killAll Finder
 cd /Volumes/Document
 mkdir Documents
 cd /Volumes/Document/Documents
-rm -fr ~/Documents
+sudo rm -fr ~/Documents
 ln -s /Volumes/Document/Documents ~/Documents
 ln -s /Volumes/Document/Documents ~/zixie
 ln -s /Volumes/Document/Documents/Library /Users/zixie/lib
