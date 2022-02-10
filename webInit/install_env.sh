@@ -17,6 +17,17 @@ sudo yum -y install tree
 sudo yum -y install rz
 sudo yum -y install lrzsz
 
+sudo yum install curl-devel expat-devel gettext-devel openssl-devel zlib-devel
+cd /usr/local/src
+wget https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/git-core/git-1.9.0.tar.gz
+tar -zxvf git-1.9.0.tar.gz
+sudo yum -y install perl-CPAN
+cd git-1.9.0 
+make configure
+./configure --prefix=/usr/local/ --with-iconv=/usr/local/libiconv/
+make && make install
+
+
 /usr/sbin/groupadd -f www
 /usr/sbin/useradd -g www www
 
