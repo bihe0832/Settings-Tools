@@ -110,3 +110,9 @@ brew doctor
 cd ~/temp
 mkdir bootsnote
 open /Applications/WeiyunResona.app
+
+
+# shot
+cd ~/temp/1
+mkdir shot
+cp -fr ~/zixie/github/Settings-Tools/config/snipaste.ini ~/.snipaste/config.ini
