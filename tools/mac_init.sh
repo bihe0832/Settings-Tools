@@ -8,6 +8,8 @@
 defaults write com.apple.finder AppleShowAllFiles -bool true
 killAll Finder
 
+sh-keygen -t rsa -C "code@bihe0832.com"
+
 # 工作环境
 cd /Volumes/Document
 mkdir Documents
@@ -28,9 +30,9 @@ mkdir 1
 cd  ~/zixie/
 mkdir github
 cd ~/zixie/github
-git clone https://github.com/bihe0832/bihe0832.github.io.git blog
-git clone https://github.com/bihe0832/Settings-Tools.git  --recursive
-git clone https://github.com/bihe0832/gitbook.git
+git clone git@github.com:bihe0832/bihe0832.github.io.git blog
+git clone git@github.com:bihe0832/Settings-Tools.git  --recursive
+git clone git@github.com:bihe0832/gitbook.git
 
 cp -fr ~/zixie/github/Settings-Tools/config/.oh-my-zsh ~/.oh-my-zsh
 cp -fr ~/zixie/github/Settings-Tools/config/mac/.zshrc ~/.zshrc
