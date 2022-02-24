@@ -271,6 +271,8 @@ alias pfkey='echo "url:http://tool.chinaz.com/tools/urlencode.aspx \necho -n \"o
 export PATH="/opt/local/bin:/usr/local/sbin":${PATH}
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/git/bin:"${PATH}
 export PATH=$(brew --prefix curl)/bin:$PATH
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 
 #android
 ANDROID_HOME=~/lib/android-sdk
