@@ -67,9 +67,13 @@ bindkey ',' autosuggest-accept
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
-
-source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh	
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh	
+
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh	
+
+export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/opt/homebrew/share/zsh-syntax-highlighting/highlighters
 
 # You may need to manually set your language environment
 export LC_ALL=en_US.UTF-8
