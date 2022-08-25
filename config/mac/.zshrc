@@ -312,8 +312,8 @@ export PATH=$ANDROID_HOME:$ANDROID_PLATFORM_TOOLS:$ANDROID_NDK_HOME:$ANDROID_NDK
 # JDK6=`/usr/libexec/java_home -v 1.6`
 JDK7=`/usr/libexec/java_home -v 1.7`
 JDK8=`/usr/libexec/java_home -v 1.8`
-JDK_AS=/Applications/Android\ Studio.app/Contents/jre/jdk/Contents/Home
-export JAVA_HOME=$JDK8
+JDK_AS=/Applications/Android\ Studio.app/Contents/jre/Contents/Home
+export JAVA_HOME=$JDK_AS
 export JAVA_OPTS="-server -Xms1g -Xmx4g -XX:MaxPermSize=1g"
 
 #gradle
