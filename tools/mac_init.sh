@@ -46,7 +46,7 @@ brew install autoconf gifsicle readline xz dos2unix thefuck tree wget sqlite zsh
 
 brew update
 # python
-brew reinstall python@2 python3
+brew reinstall python3
 
 # ruby
 sudo gem uninstall --all
