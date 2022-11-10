@@ -44,6 +44,17 @@ brew install autoconf gifsicle readline xz dos2unix thefuck tree wget sqlite zsh
 brew install autoconf gifsicle readline xz dos2unix thefuck tree wget sqlite zsh-syntax-highlighting autojump bat git-open zsh-autosuggestions
 brew install autoconf gifsicle readline xz dos2unix thefuck tree wget sqlite zsh-syntax-highlighting autojump bat git-open zsh-autosuggestions
 
+# Maven
+#https://blog.bihe0832.com/oss-sonatype.html
+
+brew install gpg
+gpg --gen-key
+gpg --export-secret-keys  -o ~/.gnupg/secring.gpg
+gpg --list-key --keyid-format short
+
+#git 
+git config --global alias.logl "log --graph --decorate --oneline --abbrev-commit --no-merges --date=short  --pretty=format:'%Cred%h%Creset%C(yellow)%d%Creset | %Cgreen%ad%Creset | %s %C(yellow)[%an]%Creset'"
+git config --global alias.logc "log --graph --decorate --abbrev-commit --no-merges --date=format:'%Y-%m-%d %H:%M:%S'  --stat  --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Cblue %s %Cgreen(%cd) %C(bold blue)<%an>%Creset'"
 brew update
 # python
 brew reinstall python3
