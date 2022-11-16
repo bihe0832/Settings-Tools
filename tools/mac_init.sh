@@ -53,9 +53,8 @@ gpg --export-secret-keys  -o ~/.gnupg/secring.gpg
 gpg --list-key --keyid-format short
 
 #git 
-git config --global alias.logl "log --graph --decorate --oneline --abbrev-commit --no-merges --date=short  --pretty=format:'%Cred%h%Creset%C(yellow)%d%Creset | %Cgreen%ad%Creset | %s %C(yellow)[%an]%Creset'"
-git config --global alias.logc "log --graph --decorate --abbrev-commit --no-merges --date=format:'%Y-%m-%d %H:%M:%S'  --stat  --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Cblue %s %Cgreen(%cd) %C(bold blue)<%an>%Creset'"
-brew update
+cp -fr ~/zixie/github/Settings-Tools/config/.gitdefaultconfig ~/.gitconfig
+
 # python
 brew reinstall python3
 
@@ -116,6 +115,7 @@ fi
 cat /etc/hosts
 sudo apachectl restart
 
+brew update
 brew cleanup
 brew doctor
 
