@@ -35,7 +35,9 @@ cp -fr ~/zixie/github/Settings-Tools/config/.oh-my-zsh ~/.oh-my-zsh
 cp -fr ~/zixie/github/Settings-Tools/config/mac/.zshrc ~/.zshrc
 
 # 基础库安装
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+# /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+brew cleanup
+brew doctor
 
 brew install autoconf gifsicle readline xz dos2unix thefuck tree wget sqlite zsh-syntax-highlighting autojump bat git-open zsh-autosuggestions
 brew install autoconf gifsicle readline xz dos2unix thefuck tree wget sqlite zsh-syntax-highlighting autojump bat git-open zsh-autosuggestions
@@ -43,9 +45,8 @@ brew install autoconf gifsicle readline xz dos2unix thefuck tree wget sqlite zsh
 
 # Maven
 #https://blog.bihe0832.com/oss-sonatype.html
-brew install github-keygen sh-keygen
-sh-keygen -t rsa -C "code@bihe0832.com"
-brew install gettext  ca-certificates  gmp  bdw-gc  m4  libtool  libunistring  pkg-config  readline  guile  libidn2  libtasn1  nettle  p11-kit  openssl  libevent  libnghttp2  unbound  gnutls  libgpg-error  libassuan  libgcrypt  libksba  libusb  npth pinentry
+brew install github-keygen
+github-keygen -t rsa -C "code@bihe0832.com"
 brew install gpg
 # gpg --gen-key
 # gpg --export-secret-keys  -o ~/.gnupg/secring.gpg

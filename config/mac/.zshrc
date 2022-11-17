@@ -62,18 +62,18 @@ setopt PUSHD_IGNORE_DUPS
 
 plugins=(cp adb brew github svn ant autojump gitignore gradle command-not-found sublime)
 
-bindkey ',' autosuggest-accept
+
 
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
-source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh	
 
-source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh	
 
-export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/opt/homebrew/share/zsh-syntax-highlighting/highlighters
+bindkey ',' autosuggest-accept
+
+export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/usr/local/share/zsh-syntax-highlighting/highlighters
 
 # You may need to manually set your language environment
 export LC_ALL=en_US.UTF-8
@@ -137,7 +137,6 @@ fun lower() {
 }
 
 #mac
-alias open='open -n'
 alias his='history | grep '
 
 fun zixieproxyon() {
@@ -272,10 +271,10 @@ alias pfkey='echo "url:http://tool.chinaz.com/tools/urlencode.aspx \necho -n \"o
 
 #通用
 
-export PATH="/opt/local/bin:/usr/local/sbin":${PATH}
+export PATH="/usr/bin:/opt/local/bin:/usr/local/sbin":${PATH}
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/git/bin:"${PATH}
 export PATH=$(brew --prefix curl)/bin:$PATH
-eval "$(/opt/homebrew/bin/brew shellenv)"
+eval "$(/usr/local/Homebrew/bin/brew shellenv)"
 
 
 #android
