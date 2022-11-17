@@ -67,13 +67,19 @@ plugins=(cp adb brew github svn ant autojump gitignore gradle command-not-found 
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh	
-
-source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh	
+UNAME_MACHINE="$(uname -m)"
+if [[ "$UNAME_MACHINE" == "arm64" ]]; then
+  	source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+	export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/opt/homebrew/share/zsh-syntax-highlighting/highlighters
+	source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+else
+	source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+	export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/usr/local/share/zsh-syntax-highlighting/highlighters
+	source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+fi
 
 bindkey ',' autosuggest-accept
 
-export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/usr/local/share/zsh-syntax-highlighting/highlighters
 
 # You may need to manually set your language environment
 export LC_ALL=en_US.UTF-8
@@ -274,8 +280,11 @@ alias pfkey='echo "url:http://tool.chinaz.com/tools/urlencode.aspx \necho -n \"o
 export PATH="/usr/bin:/opt/local/bin:/usr/local/sbin":${PATH}
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/git/bin:"${PATH}
 export PATH=$(brew --prefix curl)/bin:$PATH
-eval "$(/usr/local/Homebrew/bin/brew shellenv)"
-
+if [[ "$UNAME_MACHINE" == "arm64" ]]; then
+	eval "$(/opt/homebrew/bin/brew shellenv)"
+else
+	eval "$(/usr/local/Homebrew/bin/brew shellenv)"
+fi
 
 #android
 ANDROID_HOME=~/lib/android-sdk

@@ -12,29 +12,50 @@ killAll Finder
 # 工作环境
 cd /Volumes/Document
 cd /Volumes/Document/Documents
-ln -s /Volumes/Document/Documents ~/Documents
-ln -s /Volumes/Document/Documents ~/zixie
-ln -s /Volumes/Document/Documents/Library /Users/zixie/lib
-ln -s /Volumes/Document/Documents/Library ~/zixie/lib
+ln -sf /Volumes/Document/Documents ~/Documents
+ln -sf /Volumes/Document/Documents ~/zixie
+ln -sf /Volumes/Document/Documents/Library /Users/zixie/lib
+ln -sf /Volumes/Document/Documents/Library ~/zixie/lib
 cd /Volumes/Document/Documents
-# mkdir web
-# mkdir temp
-# ln -s /Volumes/Document/Documents/temp ~/temp
-# cd ~/temp 
-# mkdir 1
+
+if [ ! -d "/Volumes/Document/Documents/web" ]; then
+  mkdir "/Volumes/Document/Documents/web"
+fi
+
+if [ ! -d "/Volumes/Document/Documents/temp" ]; then
+  mkdir "/Volumes/Document/Documents/temp"
+fi
+
+ln -sf /Volumes/Document/Documents/temp ~/temp
+
+cd ~/temp 
+
+if [ ! -d "/Volumes/Document/Documents/temp/1" ]; then
+  mkdir "/Volumes/Document/Documents/temp/1"
+fi
 
 # 环境配置
-# cd  ~/zixie/
-# mkdir github
-# cd ~/zixie/github
-# git clone git@github.com:bihe0832/bihe0832.github.io.git blog
-# git clone git@github.com:bihe0832/Settings-Tools.git  --recursive
-# git clone git@github.com:bihe0832/gitbook.git
+if [ ! -d "/Volumes/Document/Documents/github" ]; then
+  mkdir "/Volumes/Document/Documents/github"
+fi
+
+cd ~/zixie/github
+if [ ! -d "/Volumes/Document/Documents/github/blog" ]; then
+  git clone git@github.com:bihe0832/bihe0832.github.io.git blog
+fi
+if [ ! -d "/Volumes/Document/Documents/github/Settings-Tools" ]; then
+  git clone git@github.com:bihe0832/Settings-Tools.git  --recursive
+fi
+
+if [ ! -d "/Volumes/Document/Documents/github/gitbook" ]; then
+  git clone git@github.com:bihe0832/gitbook.git
+fi
+
 
 cp -fr ~/zixie/github/Settings-Tools/config/.oh-my-zsh ~/.oh-my-zsh
 cp -fr ~/zixie/github/Settings-Tools/config/mac/.zshrc ~/.zshrc
 
-# 基础库安装
+基础库安装
 /bin/zsh -c "$(curl -fsSL https://gitee.com/cunkai/HomebrewCN/raw/master/Homebrew.sh)"
 brew cleanup
 brew doctor
@@ -46,7 +67,7 @@ brew install autoconf gifsicle readline xz dos2unix thefuck tree wget sqlite zsh
 # Maven
 #https://blog.bihe0832.com/oss-sonatype.html
 brew install github-keygen
-github-keygen -t rsa -C "code@bihe0832.com"
+# github-keygen -t rsa -C "code@bihe0832.com"
 brew install gpg
 # gpg --gen-key
 # gpg --export-secret-keys  -o ~/.gnupg/secring.gpg
@@ -122,11 +143,15 @@ brew doctor
 
 # 云端笔记
 # cd ~/temp
-# mkdir bootsnote
-# open /Applications/WeiyunResona.app
+if [ ! -d "/Volumes/Document/Documents/temp/bootsnote" ]; then
+  mkdir "/Volumes/Document/Documents/temp/bootsnote"
+fi
+open /Applications/WeiyunResona.app
 
 
 # shot
 cd ~/temp/1
-mkdir shot
+if [ ! -d "/Volumes/Document/Documents/temp/1/shot" ]; then
+  mkdir "/Volumes/Document/Documents/temp/1/shot"
+fi
 cp -fr ~/zixie/github/Settings-Tools/config/snipaste.ini ~/.snipaste/config.ini
