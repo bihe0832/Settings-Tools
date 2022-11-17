@@ -35,7 +35,7 @@ cp -fr ~/zixie/github/Settings-Tools/config/.oh-my-zsh ~/.oh-my-zsh
 cp -fr ~/zixie/github/Settings-Tools/config/mac/.zshrc ~/.zshrc
 
 # 基础库安装
-# /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+/bin/zsh -c "$(curl -fsSL https://gitee.com/cunkai/HomebrewCN/raw/master/Homebrew.sh)"
 brew cleanup
 brew doctor
 
