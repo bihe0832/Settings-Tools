@@ -8,31 +8,28 @@
 defaults write com.apple.finder AppleShowAllFiles -bool true
 killAll Finder
 
-sh-keygen -t rsa -C "code@bihe0832.com"
 
 # 工作环境
 cd /Volumes/Document
-mkdir Documents
 cd /Volumes/Document/Documents
-sudo rm -fr ~/Documents
 ln -s /Volumes/Document/Documents ~/Documents
 ln -s /Volumes/Document/Documents ~/zixie
 ln -s /Volumes/Document/Documents/Library /Users/zixie/lib
 ln -s /Volumes/Document/Documents/Library ~/zixie/lib
 cd /Volumes/Document/Documents
-mkdir web
-mkdir temp
-ln -s /Volumes/Document/Documents/temp ~/temp
-cd ~/temp 
-mkdir 1
+# mkdir web
+# mkdir temp
+# ln -s /Volumes/Document/Documents/temp ~/temp
+# cd ~/temp 
+# mkdir 1
 
 # 环境配置
-cd  ~/zixie/
-mkdir github
-cd ~/zixie/github
-git clone git@github.com:bihe0832/bihe0832.github.io.git blog
-git clone git@github.com:bihe0832/Settings-Tools.git  --recursive
-git clone git@github.com:bihe0832/gitbook.git
+# cd  ~/zixie/
+# mkdir github
+# cd ~/zixie/github
+# git clone git@github.com:bihe0832/bihe0832.github.io.git blog
+# git clone git@github.com:bihe0832/Settings-Tools.git  --recursive
+# git clone git@github.com:bihe0832/gitbook.git
 
 cp -fr ~/zixie/github/Settings-Tools/config/.oh-my-zsh ~/.oh-my-zsh
 cp -fr ~/zixie/github/Settings-Tools/config/mac/.zshrc ~/.zshrc
@@ -46,7 +43,7 @@ brew install autoconf gifsicle readline xz dos2unix thefuck tree wget sqlite zsh
 
 # Maven
 #https://blog.bihe0832.com/oss-sonatype.html
-
+sh-keygen -t rsa -C "code@bihe0832.com"
 brew install gpg
 gpg --gen-key
 gpg --export-secret-keys  -o ~/.gnupg/secring.gpg
@@ -80,6 +77,7 @@ npm config set registry https://registry.npm.taobao.org -g
 npm config get registry
 npm config get proxy
 npm install -g nrm
+
 nrm test
 nrm use taobao
 
@@ -120,9 +118,9 @@ brew cleanup
 brew doctor
 
 # 云端笔记
-cd ~/temp
-mkdir bootsnote
-open /Applications/WeiyunResona.app
+# cd ~/temp
+# mkdir bootsnote
+# open /Applications/WeiyunResona.app
 
 
 # shot
