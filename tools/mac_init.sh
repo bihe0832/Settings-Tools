@@ -45,9 +45,9 @@ brew install autoconf gifsicle readline xz dos2unix thefuck tree wget sqlite zsh
 #https://blog.bihe0832.com/oss-sonatype.html
 sh-keygen -t rsa -C "code@bihe0832.com"
 brew install gpg
-gpg --gen-key
-gpg --export-secret-keys  -o ~/.gnupg/secring.gpg
-gpg --list-key --keyid-format short
+# gpg --gen-key
+# gpg --export-secret-keys  -o ~/.gnupg/secring.gpg
+# gpg --list-key --keyid-format short
 
 #git 
 cp -fr ~/zixie/github/Settings-Tools/config/.gitdefaultconfig ~/.gitconfig
