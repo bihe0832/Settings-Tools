@@ -53,6 +53,7 @@ fi
 
 
 cp -fr ~/zixie/github/Settings-Tools/config/.oh-my-zsh ~/.oh-my-zsh
+source  ~/.oh-my-zsh/tools/install.sh
 cp -fr ~/zixie/github/Settings-Tools/config/mac/.zshrc ~/.zshrc
 
 基础库安装
