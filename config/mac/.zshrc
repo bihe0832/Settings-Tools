@@ -250,7 +250,8 @@ alias zixieadbinputright='adb shell input keyevent 22'
 alias zixieadbinputmenu='adb shell input keyevent 1'
 alias zixieadbinputhome='adb shell input keyevent 2'
 alias zixieadbinputback='adb shell input keyevent 3'
-alias zixieadbinputtext='adb shell input text'
+alias zixieadbinputsimpletext='adb shell input text'
+alias zixieadbinputtext='adb shell am broadcast -a ZIXIE_ADB_INPUT --es msg '
 alias zixieadbgetimei='adb shell am start -a android.intent.action.DIAL -d "tel:" && adb shell input text " *#06#" && adb shell input text " *#06#"'
 alias zixieadbdumpactivity='adb shell dumpsys activity > ~/temp/1/a.log && open ~/temp/1/a.log'
 
@@ -320,7 +321,7 @@ export PATH=$ANDROID_HOME:$ANDROID_PLATFORM_TOOLS:$ANDROID_NDK_HOME:$ANDROID_NDK
 # JDK6=`/usr/libexec/java_home -v 1.6`
 JDK7=`/usr/libexec/java_home -v 1.7`
 JDK8=`/usr/libexec/java_home -v 1.8`
-JDK_AS=/Applications/Android\ Studio.app/Contents/jre/Contents/Home
+JDK_AS=/Applications/Android\ Studio.app/Contents/jbr/Contents/Home
 export JAVA_HOME=$JDK_AS
 export JAVA_OPTS="-server -Xms1g -Xmx4g -XX:MaxPermSize=1g"
 
@@ -358,8 +359,8 @@ export SVN_EDITOR=vim
 export EDITOR=vim
 #RDM
 export MajorVersion=1
-export MinorVersion=1
-export FixVersion=2
+export MinorVersion=0
+export FixVersion=0
 export BuildNo=0
 export isBuildLib=false
 export isCompletedBuild=false
@@ -370,5 +371,5 @@ export isOfficial=true
 export isPreOfficial=false
 export channel="000000 111111"
 export channelType="debug official"
-export appNo=ZM3U8
+export appNo=ZINPUT
 export listAll=true
