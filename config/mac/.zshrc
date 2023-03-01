@@ -252,7 +252,7 @@ alias zixieadbinputhome='adb shell input keyevent 2'
 alias zixieadbinputback='adb shell input keyevent 3'
 alias zixieadbinputtextsimple='adb shell input text'
 alias zixieadbinputtext='adb shell am broadcast -a ZIXIE_ADB_INPUT_TEXT --es msg '
-alias zixieadbinputtextbase64='read input && content=$( base64 <<< $input ) && adb shell am broadcast -a ZIXIE_ADB_INPUT_BASE64 --es msg $content'
+alias zixieadbinputtextbase64='echo "请输入你要通过 ADB 输入内容的原文" && read input && content=$( base64 <<< $input ) && adb shell am broadcast -a ZIXIE_ADB_INPUT_BASE64 --es msg $content'
 alias zixieadbgetimei='adb shell am start -a android.intent.action.DIAL -d "tel:" && adb shell input text " *#06#" && adb shell input text " *#06#"'
 alias zixieadbdumpactivity='adb shell dumpsys activity > ~/temp/1/a.log && open ~/temp/1/a.log'
 
