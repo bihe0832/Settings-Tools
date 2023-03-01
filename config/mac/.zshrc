@@ -250,8 +250,9 @@ alias zixieadbinputright='adb shell input keyevent 22'
 alias zixieadbinputmenu='adb shell input keyevent 1'
 alias zixieadbinputhome='adb shell input keyevent 2'
 alias zixieadbinputback='adb shell input keyevent 3'
-alias zixieadbinputsimpletext='adb shell input text'
-alias zixieadbinputtext='adb shell am broadcast -a ZIXIE_ADB_INPUT --es msg '
+alias zixieadbinputtextsimple='adb shell input text'
+alias zixieadbinputtext='adb shell am broadcast -a ZIXIE_ADB_INPUT_TEXT --es msg '
+alias zixieadbinputtextbase64='read input && content=$( base64 <<< $input ) && adb shell am broadcast -a ZIXIE_ADB_INPUT_BASE64 --es msg $content'
 alias zixieadbgetimei='adb shell am start -a android.intent.action.DIAL -d "tel:" && adb shell input text " *#06#" && adb shell input text " *#06#"'
 alias zixieadbdumpactivity='adb shell dumpsys activity > ~/temp/1/a.log && open ~/temp/1/a.log'
 
@@ -360,7 +361,7 @@ export EDITOR=vim
 #RDM
 export MajorVersion=1
 export MinorVersion=0
-export FixVersion=0
+export FixVersion=2
 export BuildNo=0
 export isBuildLib=false
 export isCompletedBuild=false
