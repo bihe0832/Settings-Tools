@@ -245,6 +245,7 @@ alias zixieadbactivity='adb shell dumpsys activity'
 alias zixieadbgetproduct='adb shell getprop | egrep "version.release|version.sdk|ro.product.brand|ro.product.model|ro.product.manufacturer|ro.sf.lcd_density|ro.product.cpu|ro.product.locale|ril.product_code" && adb shell wm size'
 alias zixieadbinputspace='adb shell input keyevent 62'
 alias zixieadbinputdel='adb shell input keyevent 67'
+alias zixieadbinputenter='adb shell input keyevent 66'
 alias zixieadbinputleft='adb shell input keyevent 21'
 alias zixieadbinputright='adb shell input keyevent 22'
 alias zixieadbinputmenu='adb shell input keyevent 1'
@@ -253,6 +254,9 @@ alias zixieadbinputback='adb shell input keyevent 3'
 alias zixieadbinputtextsimple='adb shell input text'
 alias zixieadbinputtext='adb shell am broadcast -a ZIXIE_ADB_INPUT_TEXT --es msg '
 alias zixieadbinputtextbase64='echo "请输入你要通过 ADB 输入内容的原文" && read input && content=$( base64 <<< $input ) && adb shell am broadcast -a ZIXIE_ADB_INPUT_BASE64 --es msg $content'
+alias zixieadbinputtextbase64commit='zixieadbinputtextbase64 && zixieadbinputenter'
+alias zixieadbpushimage='echo "请将上传文件拖到命令窗口点击回车" && read input && adb push $input /sdcard/DCIM/ && adb shell am broadcast -a android.intent.action.MEDIA_SCANNER_SCAN_FILE -d file:///sdcard/DCIM/$(basename $input)'
+
 alias zixieadbgetimei='adb shell am start -a android.intent.action.DIAL -d "tel:" && adb shell input text " *#06#" && adb shell input text " *#06#"'
 alias zixieadbdumpactivity='adb shell dumpsys activity > ~/temp/1/a.log && open ~/temp/1/a.log'
 
@@ -360,7 +364,7 @@ export SVN_EDITOR=vim
 export EDITOR=vim
 #RDM
 export MajorVersion=1
-export MinorVersion=0
+export MinorVersion=3
 export FixVersion=2
 export BuildNo=0
 export isBuildLib=false
