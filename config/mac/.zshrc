@@ -6,7 +6,7 @@ export ZSH=~/.oh-my-zsh
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 ZSH_THEME="robbyrussell"
-#source $ZSH/oh-my-zsh.sh
+source $ZSH/oh-my-zsh.sh
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -240,7 +240,7 @@ alias adbSingle='alias adb="adb"'
 alias adbMutil='alias adb="adb devices | tail -n +2 | cut -sf 1 | xargs -I {} -p adb -s {}"'
 alias zixieadbscreenshots='adb shell screencap -p /sdcard/screen.png && adb pull /sdcard/screen.png /tmp/ && adb shell rm /sdcard/screen.png && cp -fr /tmp/screen.png ~/temp && open file:/tmp/screen.png'
 alias zixieadbdumpui='adb shell uiautomator dump /sdcard/UIdump.xml && adb pull /sdcard/UIdump.xml ~/temp/1/ && adb shell rm /sdcard/UIdump.xml && open ~/temp/1/UIdump.xml'
-alias zixieadbstop＝'adb shell am force-stop'
+alias zixieadbstop='adb shell am force-stop'
 alias zixieadbactivity='adb shell dumpsys activity'
 alias zixieadbgetproduct='adb shell getprop | egrep "version.release|version.sdk|ro.product.brand|ro.product.model|ro.product.manufacturer|ro.sf.lcd_density|ro.product.cpu|ro.product.locale|ril.product_code" && adb shell wm size'
 alias zixieadbinputspace='adb shell input keyevent 62'
@@ -253,9 +253,23 @@ alias zixieadbinputhome='adb shell input keyevent 2'
 alias zixieadbinputback='adb shell input keyevent 3'
 alias zixieadbinputtextsimple='adb shell input text'
 alias zixieadbinputtext='adb shell am broadcast -a ZIXIE_ADB_INPUT_TEXT --es msg '
-alias zixieadbinputtextbase64='echo "请输入你要通过 ADB 输入内容的原文" && read input && content=$( base64 <<< $input ) && adb shell am broadcast -a ZIXIE_ADB_INPUT_BASE64 --es msg $content'
-alias zixieadbinputtextbase64commit='zixieadbinputtextbase64 && zixieadbinputenter'
-alias zixieadbpushimage='echo "请将上传文件拖到命令窗口点击回车" && read input && adb push $input /sdcard/DCIM/ && adb shell am broadcast -a android.intent.action.MEDIA_SCANNER_SCAN_FILE -d file:///sdcard/DCIM/$(basename $input)'
+alias zixieadbinputbase64='zixieadbinputtextbase64(){ content=$( base64 <<< $1 ) && adb shell am broadcast -a ZIXIE_ADB_INPUT_BASE64 --es msg $content};zixieadbinputtextbase64'
+alias zixieadbinputbase64step='echo "请输入你要通过 ADB 输入内容的原文" && read input && zixieadbinputbase64 $input'
+alias zixieadbinputbase64commit='zixieadbinputbase64commit(){zixieadbinputbase64 $1 && zixieadbinputenter}; zixieadbinputbase64commit'
+alias zixieadbinputbase64commitstep='zixieadbinputbase64commitstep(){zixieadbinputbase64step $1 && zixieadbinputenter}; zixieadbinputbase64commitstep'
+fun zixieadbpushimage() {
+	echo "zixieadbpushimage filePath:$1"
+	filePath=$1 
+	adb push $filePath /sdcard/DCIM/ 
+	adb shell am broadcast -a android.intent.action.MEDIA_SCANNER_SCAN_FILE -d file:///sdcard/DCIM/$(basename $filePath)
+}
+
+fun zixieadbpushimagelist() {
+	echo "zixieadbpushimagelist filePath:$1"
+	filePath=$1 
+	ls $filePath
+	ls $filePath | xargs -I {} echo "$filePath"/{} | xargs -I {} zsh -ic 'zixieadbpushimage {}'
+}
 
 alias zixieadbgetimei='adb shell am start -a android.intent.action.DIAL -d "tel:" && adb shell input text " *#06#" && adb shell input text " *#06#"'
 alias zixieadbdumpactivity='adb shell dumpsys activity > ~/temp/1/a.log && open ~/temp/1/a.log'
@@ -364,8 +378,8 @@ export SVN_EDITOR=vim
 export EDITOR=vim
 #RDM
 export MajorVersion=1
-export MinorVersion=3
-export FixVersion=2
+export MinorVersion=0
+export FixVersion=1
 export BuildNo=0
 export isBuildLib=false
 export isCompletedBuild=false
