@@ -259,16 +259,18 @@ alias zixieadbinputbase64commit='zixieadbinputbase64commit(){zixieadbinputbase64
 alias zixieadbinputbase64commitstep='zixieadbinputbase64commitstep(){zixieadbinputbase64step $1 && zixieadbinputenter}; zixieadbinputbase64commitstep'
 fun zixieadbpushimage() {
 	echo "zixieadbpushimage filePath:$1"
+	echo "zixieadbpushimage tagetPath:$2"
 	filePath=$1 
-	adb push $filePath /sdcard/DCIM/ 
-	adb shell am broadcast -a android.intent.action.MEDIA_SCANNER_SCAN_FILE -d file:///sdcard/DCIM/$(basename $filePath)
+	tagetPath=$2
+	adb push $filePath $tagetPath
+	adb shell am broadcast -a android.intent.action.MEDIA_SCANNER_SCAN_FILE -d file://$tagetPath$(basename $filePath)
 }
 
 fun zixieadbpushimagelist() {
 	echo "zixieadbpushimagelist filePath:$1"
 	filePath=$1 
 	ls $filePath
-	ls $filePath | xargs -I {} echo "$filePath"/{} | xargs -I {} zsh -ic 'zixieadbpushimage {}'
+	ls $filePath | xargs -I {} echo "$filePath"/{} | xargs -I {} zsh -ic 'zixieadbpushimage {} /sdcard/DCIM/' 
 }
 
 alias zixieadbgetimei='adb shell am start -a android.intent.action.DIAL -d "tel:" && adb shell input text " *#06#" && adb shell input text " *#06#"'
