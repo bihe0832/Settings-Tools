@@ -257,7 +257,7 @@ alias zixieadbinputbase64='zixieadbinputtextbase64(){ content=$( base64 <<< $1 )
 alias zixieadbinputbase64step='echo "请输入你要通过 ADB 输入内容的原文" && read input && zixieadbinputbase64 $input'
 alias zixieadbinputbase64commit='zixieadbinputbase64commit(){zixieadbinputbase64 $1 && zixieadbinputenter}; zixieadbinputbase64commit'
 alias zixieadbinputbase64commitstep='zixieadbinputbase64commitstep(){zixieadbinputbase64step $1 && zixieadbinputenter}; zixieadbinputbase64commitstep'
-fun zixieadbpushimage() {
+fun zixieadbpushimageaction() {
 	echo "zixieadbpushimage filePath:$1"
 	echo "zixieadbpushimage tagetPath:$2"
 	filePath=$1 
@@ -265,12 +265,13 @@ fun zixieadbpushimage() {
 	adb push $filePath $tagetPath
 	adb shell am broadcast -a android.intent.action.MEDIA_SCANNER_SCAN_FILE -d file://$tagetPath$(basename $filePath)
 }
+alias zixieadbpushimage='zixieadbpushimage(){zixieadbpushimageaction $1 /sdcard/DCIM/}; zixieadbpushimage'
 
 fun zixieadbpushimagelist() {
 	echo "zixieadbpushimagelist filePath:$1"
 	filePath=$1 
 	ls $filePath
-	ls $filePath | xargs -I {} echo "$filePath"/{} | xargs -I {} zsh -ic 'zixieadbpushimage {} /sdcard/DCIM/' 
+	ls $filePath | xargs -I {} echo "$filePath"/{} | xargs -I {} zsh -ic 'zixieadbpushimageaction {} /sdcard/DCIM/' 
 }
 
 alias zixieadbgetimei='adb shell am start -a android.intent.action.DIAL -d "tel:" && adb shell input text " *#06#" && adb shell input text " *#06#"'
