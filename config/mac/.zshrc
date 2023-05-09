@@ -252,8 +252,19 @@ alias zixieadbinputmenu='adb shell input keyevent 1'
 alias zixieadbinputhome='adb shell input keyevent 2'
 alias zixieadbinputback='adb shell input keyevent 3'
 alias zixieadbinputtextsimple='adb shell input text'
-alias zixieadbinputtext='adb shell am broadcast -a ZIXIE_ADB_INPUT_TEXT --es msg '
-alias zixieadbinputbase64='zixieadbinputtextbase64(){ content=$( base64 <<< $1 ) && adb shell am broadcast -a ZIXIE_ADB_INPUT_BASE64 --es msg $content};zixieadbinputtextbase64'
+fun zixieadbinputchangetozixieinput(){
+	# 获取当前输入法包名
+	current_ime=$(adb shell settings get secure default_input_method | tr -d '\r')
+	echo "$current_ime"
+
+	# 判断输入法是否为指定的包名
+	if [[ "$current_ime" != "com.bihe0832.adb.input/com.bihe0832.android.base.adb.input.ZixieIME" ]]; then
+		echo "$current_ime"
+		adb shell ime set com.bihe0832.adb.input/com.bihe0832.android.base.adb.input.ZixieIME && sleep 2
+	fi
+}
+alias zixieadbinputtext='zixieadbinputchangetozixieinput && adb shell am broadcast -a ZIXIE_ADB_INPUT_TEXT --es msg '
+alias zixieadbinputbase64='zixieadbinputchangetozixieinput && zixieadbinputtextbase64(){ content=$( base64 <<< $1 ) && adb shell am broadcast -a ZIXIE_ADB_INPUT_BASE64 --es msg $content};zixieadbinputtextbase64'
 alias zixieadbinputbase64step='echo "请输入你要通过 ADB 输入内容的原文" && read input && zixieadbinputbase64 $input'
 alias zixieadbinputbase64commit='zixieadbinputbase64commit(){zixieadbinputbase64 $1 && zixieadbinputenter}; zixieadbinputbase64commit'
 alias zixieadbinputbase64commitstep='zixieadbinputbase64commitstep(){zixieadbinputbase64step $1 && zixieadbinputenter}; zixieadbinputbase64commitstep'
