@@ -44,7 +44,6 @@ local.properties
 ######################
 build
 captures
-gradle.properties
 .externalNativeBuild
 
 ######################
@@ -65,3 +64,4 @@ CMakeCache.txt
 CMakeFiles/
 Makefile
 cmake_install.cmake
+.cxx

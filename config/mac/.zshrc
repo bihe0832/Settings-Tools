@@ -221,7 +221,9 @@ alias zixieshowvideo='~/zixie/lib/ffprobe -v quiet -show_format '
 #android 
 alias zixieandroidapktoold='java -jar -Duser.language=en -Duser.home=$ANDROID_HOME/build-tools/25.0.2 ~/lib/apktool.jar d -f '
 alias zixieandroiddex2jar='date +'%Y%m%d_%H%M%S_dex2jar.jar' | xargs -I {} $DEX2JAR_HOME/d2j-dex2jar.sh -o ~/temp/1/{}'
-alias zixieandroidjdgui='temp && java -jar ~/lib/jd-gui-1.4.0.jar'
+alias zixieandroidjdgui='temp && java -jar ~/lib/jd-gui.jar'
+alias zixieandroidjadx='temp && ~/lib/jadx-1.4.7/bin/jadx-gui'
+
 fun zixiejavaClassVersion() {
 	javap -verbose $1 | head
 }
@@ -391,16 +393,16 @@ export PATH="/Users/zixie/Library/Python/3.7/bin:"${PATH}
 export SVN_EDITOR=vim
 export EDITOR=vim
 #RDM
-export MajorVersion=1
-export MinorVersion=0
+export MajorVersion=6
+export MinorVersion=6
 export FixVersion=1
 export BuildNo=0
 export isBuildLib=false
 export isCompletedBuild=false
 export isDebug=true
-export isReleaseTest=false
+export isBeta=false
 export isReleaseOfficial= false
-export isOfficial=true
+export isOfficial=false
 export isPreOfficial=false
 export channel="000000 111111"
 export channelType="debug official"
