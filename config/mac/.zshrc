@@ -124,6 +124,8 @@ alias datedetail="date +%s && date +'%Y-%m-%d %H:%M:%S %W'"
 alias temp='cd ~/temp/1 && pwd'
 alias iconvgbk2utf8='iconv -f gbk -t utf8'
 alias iconvutf82gbk='iconv -f utf8 -t gbk'
+alias xxd='xxd -g 1 -c 48'
+
 
 fun wgettemp() {
 	temp && wget -P $1
@@ -219,7 +221,7 @@ alias zixieshowvideo='~/zixie/lib/ffprobe -v quiet -show_format '
 
 
 #android 
-alias zixieandroidapktoold='java -jar -Duser.language=en -Duser.home=$ANDROID_HOME/build-tools/25.0.2 ~/lib/apktool.jar d -f '
+alias zixieandroidapktoold='java -jar -Duser.language=en -Duser.home=$ANDROID_HOME/build-tools/33.0.0 ~/lib/apktool.jar d -f '
 alias zixieandroiddex2jar='date +'%Y%m%d_%H%M%S_dex2jar.jar' | xargs -I {} $DEX2JAR_HOME/d2j-dex2jar.sh -o ~/temp/1/{}'
 alias zixieandroidjdgui='temp && java -jar ~/lib/jd-gui.jar'
 alias zixieandroidjadx='temp && ~/lib/jadx-1.4.7/bin/jadx-gui'
