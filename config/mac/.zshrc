@@ -349,6 +349,9 @@ export ANDROID_NDK_HOME
 ANDROID_NDK_CMD=${ANDROID_NDK_HOME}/ndk-build
 export ANDROID_NDK_CMD
 
+NDK_BUILD_PATH=~/lib/android-sdk/ndk/ndk-bundle
+export NDK_BUILD_PATH
+
 DEX2JAR_HOME=~/lib/dex2jar-2.0
 export DEX2JAR_HOME
 
