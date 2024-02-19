@@ -62,11 +62,9 @@ setopt PUSHD_IGNORE_DUPS
 
 plugins=(cp adb brew github svn ant autojump gitignore gradle command-not-found sublime)
 
-
-
 # User configuration
 
-# export MANPATH="/usr/local/man:$MANPATH"
+export MANPATH="/usr/local/man:$MANPATH"
 UNAME_MACHINE="$(uname -m)"
 if [[ "$UNAME_MACHINE" == "arm64" ]]; then
   	source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -77,9 +75,7 @@ else
 	export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/usr/local/share/zsh-syntax-highlighting/highlighters
 	source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 fi
-
 bindkey ',' autosuggest-accept
-
 
 # You may need to manually set your language environment
 export LC_ALL=en_US.UTF-8
@@ -290,7 +286,7 @@ fun zixieadbpushimagelist() {
 }
 
 alias zixieadbgetimei='adb shell am start -a android.intent.action.DIAL -d "tel:" && adb shell input text " *#06#" && adb shell input text " *#06#"'
-alias zixieadbdumpactivity='adb shell dumpsys activity > ~/temp/1/a.log && open ~/temp/1/a.log'
+alias zixieadbdumpactivity='adb shell dumpsys activity services > ~/temp/1/a.log && open ~/temp/1/a.log'
 
 #android test
 alias zixieclswechat='adb shell pm clear com.tencent.mm'
@@ -337,14 +333,16 @@ export ANDROID_TOOLS
 ANDROID_PLATFORM_TOOLS=$ANDROID_HOME/platform-tools
 export ANDROID_PLATFORM_TOOLS
 
+ANDROID_CMAKE=$ANDROID_SDK/cmake/3.22.1
+export ANDROID_CMAKE
+
 ANDROIDNDK_LINUX_R16B=~/lib/android-ndk-r16b
 export ANDROIDNDK_LINUX_R16B
 
-ANDROIDNDK_LINUX_R19C=~/lib/android-sdk/ndk/19.2.5345600
-export ANDROIDNDK_LINUX_R19C
-
-ANDROID_NDK_HOME=${ANDROIDNDK_LINUX_R19C}
+ANDROID_NDK_HOME=~/lib/android-sdk/ndk/21.4.7075529
 export ANDROID_NDK_HOME
+ANDROID_NDK_ROOT=$ANDROID_NDK_HOME
+export ANDROID_NDK_ROOT
 
 ANDROID_NDK_CMD=${ANDROID_NDK_HOME}/ndk-build
 export ANDROID_NDK_CMD
@@ -355,7 +353,7 @@ export NDK_BUILD_PATH
 DEX2JAR_HOME=~/lib/dex2jar-2.0
 export DEX2JAR_HOME
 
-export PATH=$ANDROID_HOME:$ANDROID_PLATFORM_TOOLS:$ANDROID_NDK_HOME:$ANDROID_NDK_CMD:$ANDROID_TOOLS:$DEX2JAR_HOME:${PATH}
+export PATH=$ANDROID_NDK_ROOT:$ANDROID_HOME:$ANDROID_PLATFORM_TOOLS:$ANDROID_CMAKE/bin:$ANDROID_NDK_HOME:$ANDROID_NDK_CMD:$ANDROID_NDK_ROOT/prebuilt/darwin-x86_64/bin:$ANDROID_TOOLS:$DEX2JAR_HOME:${PATH}
 
 #java
 # JDK6=`/usr/libexec/java_home -v 1.6`
@@ -398,16 +396,16 @@ export PATH="/Users/zixie/Library/Python/3.7/bin:"${PATH}
 export SVN_EDITOR=vim
 export EDITOR=vim
 #RDM
-export MajorVersion=6
-export MinorVersion=6
-export FixVersion=1
+export MajorVersion=1
+export MinorVersion=3
+export FixVersion=7
 export BuildNo=0
 export isBuildLib=false
 export isCompletedBuild=false
 export isDebug=true
 export isBeta=false
 export isReleaseOfficial= false
-export isOfficial=false
+export isOfficial=true
 export isPreOfficial=false
 export channel="000000 111111"
 export channelType="debug official"
