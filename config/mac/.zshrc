@@ -290,21 +290,14 @@ alias zixieadbdumpactivity='adb shell dumpsys activity services > ~/temp/1/a.log
 
 #android test
 alias zixieclswechat='adb shell pm clear com.tencent.mm'
-alias zixieinputwechatpwd='adb shell input text YOUXIyouxi'
 
 #web
 alias zixiewebroot='cd ~/zixie/web && pwd'
-alias zixiezhuoyoutest='cd ~/zixie/web/zhuoyouzhushou/2 && pwd'
-alias zixiezhuoyourelease='cd ~/zixie/web/zhuoyouzhushou/10 && pwd'
 alias zixiemysqllcal='/Applications/MAMP/Library/bin/mysql -uroot -proot'
 
 #svn
 alias svnignore='svn propedit svn:ignore .'
 alias svndel='svn --force del'
-
-#shakeba
-alias shakebaRoot='cd ~/zixie/github/shakeba_new && pwd'
-alias pfkey='echo "url:http://tool.chinaz.com/tools/urlencode.aspx \necho -n \"openid_openkey_offerid_pf_KEY\” | md5 -r"'
 
 
 #PATH
@@ -397,8 +390,8 @@ export SVN_EDITOR=vim
 export EDITOR=vim
 #RDM
 export MajorVersion=1
-export MinorVersion=3
-export FixVersion=7
+export MinorVersion=4
+export FixVersion=0
 export BuildNo=0
 export isBuildLib=false
 export isCompletedBuild=false
