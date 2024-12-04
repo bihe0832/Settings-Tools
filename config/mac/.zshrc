@@ -286,7 +286,8 @@ fun zixieadbpushimagelist() {
 }
 
 alias zixieadbgetimei='adb shell am start -a android.intent.action.DIAL -d "tel:" && adb shell input text " *#06#" && adb shell input text " *#06#"'
-alias zixieadbdumpactivity='adb shell dumpsys activity services > ~/temp/1/a.log && open ~/temp/1/a.log'
+alias zixieadbdumpactivity='adb shell dumpsys activity activities > ~/temp/1/a.log && open ~/temp/1/a.log'
+alias zixieadbcurrentactivity='adb shell dumpsys activity activities | grep mResumedActivity'
 
 #android test
 alias zixieclswechat='adb shell pm clear com.tencent.mm'
@@ -332,8 +333,10 @@ export ANDROID_CMAKE
 ANDROIDNDK_LINUX_R16B=~/lib/android-ndk-r16b
 export ANDROIDNDK_LINUX_R16B
 
-ANDROID_NDK_HOME=~/lib/android-sdk/ndk/21.4.7075529
+ANDROID_NDK_HOME=~/lib/android-sdk/ndk/22.1.7171670
 export ANDROID_NDK_HOME
+ANDROID_NDK=$ANDROID_NDK_HOME
+export ANDROID_NDK
 ANDROID_NDK_ROOT=$ANDROID_NDK_HOME
 export ANDROID_NDK_ROOT
 
@@ -362,6 +365,18 @@ export GRADLE_BASE=~/lib/gradle
 export GRADLE_USER_HOME=~/lib/gradle/
 export PATH=${GRADLE_HOME}/bin:$PATH
 
+#harmony
+export HAR_TOOLS=~/zixie/lib/harmony/command-line-tools
+export PATH=${HAR_TOOLS}/bin:${PATH}
+
+#配置HarmonyOS SDK环境变量
+export HOS_SDK_HOME=~/zixie/lib/harmony/sdk
+export PATH=${OHPM_HOME}/bin:${PATH}
+export HDC_HOME=~/zixie/lib/harmony/sdk/HarmonyOS-NEXT-DP2/hms/toolchains/
+export PATH=$PATH:$HDC_HOME
+
+
+ 
 #node
 export PATH='/usr/local/Cellar/node/10.11.0/bin':$PATH
 alias cnpm="npm --registry=https://registry.npm.taobao.org \
@@ -390,7 +405,7 @@ export SVN_EDITOR=vim
 export EDITOR=vim
 #RDM
 export MajorVersion=1
-export MinorVersion=4
+export MinorVersion=5
 export FixVersion=0
 export BuildNo=0
 export isBuildLib=false
@@ -402,5 +417,5 @@ export isOfficial=true
 export isPreOfficial=false
 export channel="000000 111111"
 export channelType="debug official"
-export appNo=ZINPUT
+export appNo=ZM3U8
 export listAll=true

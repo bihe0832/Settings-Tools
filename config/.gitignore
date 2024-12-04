@@ -65,3 +65,21 @@ CMakeFiles/
 Makefile
 cmake_install.cmake
 .cxx
+
+
+
+######################
+# NPM and arkts
+######################
+.npm
+.clang-format
+.clang-tidy
+.clangd
+.idea
+.hvigor
+oh_modules
+oh-package-lock.json5
+.cxx
+.preview
+.preview
+build
