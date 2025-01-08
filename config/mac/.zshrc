@@ -195,6 +195,7 @@ alias zixiegitignore="cp -r ~/zixie/github/Settings-Tools/config/.gitignore ./"
 alias gitlogl="git log --graph --decorate --oneline --abbrev-commit --no-merges --date=short  --pretty=format:'%Cred%h%Creset%C(yellow)%d%Creset | %Cgreen%ad%Creset | %s %C(yellow)[%an]%Creset'"
 alias gitlogc="git log --graph --decorate --abbrev-commit --no-merges --date=format:'%Y-%m-%d %H:%M:%S'  --stat  --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Cblue %s %Cgreen(%cd) %C(bold blue)<%an>%Creset'"
 alias gitlogme="git log --graph --decorate --abbrev-commit --no-merges --date=short  --pretty=format:'%s' --after='1 week ago' --committer=bihe0832"
+alias gitpushall="git push origin && git push origin2"
 
 
 #blog
