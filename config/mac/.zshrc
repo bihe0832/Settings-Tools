@@ -358,7 +358,6 @@ JDK7=`/usr/libexec/java_home -v 1.7`
 JDK8=`/usr/libexec/java_home -v 1.8`
 JDK_AS=/Applications/Android\ Studio.app/Contents/jbr/Contents/Home
 export JAVA_HOME=$JDK_AS
-export JAVA_OPTS="-server -Xms1g -Xmx4g -XX:MaxPermSize=1g"
 
 #gradle
 export GRADLE_HOME=~/lib/gradle/
@@ -405,8 +404,8 @@ export PATH="/Users/zixie/Library/Python/3.7/bin:"${PATH}
 export SVN_EDITOR=vim
 export EDITOR=vim
 #RDM
-export MajorVersion=1
-export MinorVersion=5
+export MajorVersion=2
+export MinorVersion=0
 export FixVersion=0
 export BuildNo=0
 export isBuildLib=false
@@ -418,5 +417,5 @@ export isOfficial=true
 export isPreOfficial=false
 export channel="000000 111111"
 export channelType="debug official"
-export appNo=ZM3U8
+export appNo=MNA
 export listAll=true
