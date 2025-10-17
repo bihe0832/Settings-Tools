@@ -43,27 +43,31 @@ cd ~/zixie/github
 if [ ! -d "/Volumes/Document/Documents/github/blog" ]; then
   git clone git@github.com:bihe0832/bihe0832.github.io.git blog
 fi
+
 if [ ! -d "/Volumes/Document/Documents/github/Settings-Tools" ]; then
   git clone git@github.com:bihe0832/Settings-Tools.git  --recursive
 fi
+cd ~/zixie/github/Settings-Tools/config/.oh-my-zsh/
+git submodule update --init
+git pull
 
 if [ ! -d "/Volumes/Document/Documents/github/gitbook" ]; then
   git clone git@github.com:bihe0832/gitbook.git
 fi
 
-
 cp -fr ~/zixie/github/Settings-Tools/config/.oh-my-zsh ~/.oh-my-zsh
 source  ~/.oh-my-zsh/tools/install.sh
 cp -fr ~/zixie/github/Settings-Tools/config/mac/.zshrc ~/.zshrc
+source ~/.zshrc
 
 基础库安装
 /bin/zsh -c "$(curl -fsSL https://gitee.com/cunkai/HomebrewCN/raw/master/Homebrew.sh)"
 brew cleanup
 brew doctor
 
-brew install autoconf gifsicle readline xz dos2unix thefuck tree wget sqlite zsh-syntax-highlighting autojump bat git-open zsh-autosuggestions bsdiff
-brew install autoconf gifsicle readline xz dos2unix thefuck tree wget sqlite zsh-syntax-highlighting autojump bat git-open zsh-autosuggestions bsdiff
-brew install autoconf gifsicle readline xz dos2unix thefuck tree wget sqlite zsh-syntax-highlighting autojump bat git-open zsh-autosuggestions bsdiff
+brew install autoconf gifsicle readline xz dos2unix thefuck tree wget sqlite zsh-syntax-highlighting autojump bat git-open zsh-autosuggestions bsdiff git-lfs
+brew install autoconf gifsicle readline xz dos2unix thefuck tree wget sqlite zsh-syntax-highlighting autojump bat git-open zsh-autosuggestions bsdiff git-lfs
+brew install autoconf gifsicle readline xz dos2unix thefuck tree wget sqlite zsh-syntax-highlighting autojump bat git-open zsh-autosuggestions bsdiff git-lfs
 
 # Maven
 #https://blog.bihe0832.com/oss-sonatype.html

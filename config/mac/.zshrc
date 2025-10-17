@@ -404,9 +404,9 @@ export PATH="/Users/zixie/Library/Python/3.7/bin:"${PATH}
 export SVN_EDITOR=vim
 export EDITOR=vim
 #RDM
-export MajorVersion=2
+export MajorVersion=1
 export MinorVersion=0
-export FixVersion=0
+export FixVersion=1
 export BuildNo=0
 export isBuildLib=false
 export isCompletedBuild=false
