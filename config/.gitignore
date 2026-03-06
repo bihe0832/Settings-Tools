@@ -83,3 +83,6 @@ oh-package-lock.json5
 .preview
 .preview
 build
+.codebuddy
+aafRepo
+bin

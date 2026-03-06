@@ -6,13 +6,17 @@ export ZSH=~/.oh-my-zsh
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 ZSH_THEME="robbyrussell"
+
+# 禁用 oh-my-zsh 自动更新提示
+DISABLE_AUTO_UPDATE="true"
+
 source $ZSH/oh-my-zsh.sh
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
+# DISABLE_AUTO_UPDATE="true" # (已移至 source 前生效)
 
 # Uncomment the following line to change how often to auto-update (in days).
 # export UPDATE_ZSH_DAYS=13
@@ -411,7 +415,7 @@ export BuildNo=0
 export isBuildLib=false
 export isCompletedBuild=false
 export isDebug=true
-export isBeta=false
+export isBeta=true
 export isReleaseOfficial= false
 export isOfficial=true
 export isPreOfficial=false
