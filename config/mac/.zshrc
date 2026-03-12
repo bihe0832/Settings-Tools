@@ -196,7 +196,7 @@ alias zixiegitcheck="/bin/bash ~/zixie/github/Settings-Tools/tools/check_github.
 alias zixiegitcheckandupdate="/bin/bash ~/zixie/github/Settings-Tools/tools/check_github.sh 1"
 
 alias zixiegitignore="cp -r ~/zixie/github/Settings-Tools/config/.gitignore ./"
-alias gitlogl="git log --graph --decorate --oneline --abbrev-commit --no-merges --date=short  --pretty=format:'%Cred%h%Creset%C(yellow)%d%Creset | %Cgreen%ad%Creset | %s %C(yellow)[%an]%Creset'"
+alias gitlogl="git log --graph --decorate --oneline --abbrev-commit --no-merges --date=short --pretty=format:'%Cred%h%Creset%C(yellow)%d%Creset | %Cgreen%ad%Creset | %s %C(yellow)[%an]%Creset'"
 alias gitlogc="git log --graph --decorate --abbrev-commit --no-merges --date=format:'%Y-%m-%d %H:%M:%S'  --stat  --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Cblue %s %Cgreen(%cd) %C(bold blue)<%an>%Creset'"
 alias gitlogme="git log --graph --decorate --abbrev-commit --no-merges --date=short  --pretty=format:'%s' --after='1 week ago' --committer=bihe0832"
 alias gitpushall="git push origin && git push origin2"
@@ -358,8 +358,8 @@ export PATH=$ANDROID_NDK_ROOT:$ANDROID_HOME:$ANDROID_PLATFORM_TOOLS:$ANDROID_CMA
 
 #java
 # JDK6=`/usr/libexec/java_home -v 1.6`
-JDK7=`/usr/libexec/java_home -v 1.7`
-JDK8=`/usr/libexec/java_home -v 1.8`
+# JDK7=`/usr/libexec/java_home -v 1.7`
+# JDK8=`/usr/libexec/java_home -v 1.8`
 JDK_AS=/Applications/Android\ Studio.app/Contents/jbr/Contents/Home
 export JAVA_HOME=$JDK_AS
 
@@ -389,8 +389,16 @@ alias cnpm="npm --registry=https://registry.npm.taobao.org \
 --userconfig=$HOME/.cnpmrc"
 
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# nvm 延迟加载：首次使用 nvm/node/npm/npx 时才加载（节省 ~260ms 启动时间）
+nvm_lazy_load() {
+    unset -f nvm node npm npx 2>/dev/null
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+    [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+}
+nvm()  { nvm_lazy_load; nvm  "$@"; }
+node() { nvm_lazy_load; node "$@"; }
+npm()  { nvm_lazy_load; npm  "$@"; }
+npx()  { nvm_lazy_load; npx  "$@"; }
 #gem
 export PATH="/usr/local/lib/ruby/gems/2.6.0/bin:$PATH"
 export PATH="/usr/local/opt/ruby@2.6/bin:$PATH"
