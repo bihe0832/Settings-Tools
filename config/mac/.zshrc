@@ -335,26 +335,21 @@ export ANDROID_PLATFORM_TOOLS
 ANDROID_CMAKE=$ANDROID_SDK/cmake/3.22.1
 export ANDROID_CMAKE
 
-ANDROIDNDK_LINUX_R16B=~/lib/android-ndk-r16b
-export ANDROIDNDK_LINUX_R16B
-
-ANDROID_NDK_HOME=~/lib/android-sdk/ndk/22.1.7171670
+# Android NDK（统一使用 r28+，支持 16KB 页面对齐）
+# 可用版本：16.1.4479499, 21.4.7075529, 23.1.7779620, 25.1.8937393, 28.0.13004108
+ANDROID_NDK_HOME=~/lib/android-sdk/ndk/28.0.13004108
 export ANDROID_NDK_HOME
-ANDROID_NDK=$ANDROID_NDK_HOME
-export ANDROID_NDK
-ANDROID_NDK_ROOT=$ANDROID_NDK_HOME
-export ANDROID_NDK_ROOT
+export ANDROID_NDK=$ANDROID_NDK_HOME
+export ANDROID_NDK_ROOT=$ANDROID_NDK_HOME
 
-ANDROID_NDK_CMD=${ANDROID_NDK_HOME}/ndk-build
-export ANDROID_NDK_CMD
-
-NDK_BUILD_PATH=~/lib/android-sdk/ndk/ndk-bundle
-export NDK_BUILD_PATH
+# NDK 工具链（包含 llvm-readelf, llvm-objdump 等）
+ANDROID_NDK_TOOLCHAIN=$ANDROID_NDK_HOME/toolchains/llvm/prebuilt/darwin-x86_64/bin
+export ANDROID_NDK_TOOLCHAIN
 
 DEX2JAR_HOME=~/lib/dex2jar-2.0
 export DEX2JAR_HOME
 
-export PATH=$ANDROID_NDK_ROOT:$ANDROID_HOME:$ANDROID_PLATFORM_TOOLS:$ANDROID_CMAKE/bin:$ANDROID_NDK_HOME:$ANDROID_NDK_CMD:$ANDROID_NDK_ROOT/prebuilt/darwin-x86_64/bin:$ANDROID_TOOLS:$DEX2JAR_HOME:${PATH}
+export PATH=$ANDROID_NDK_TOOLCHAIN:$ANDROID_NDK_HOME:$ANDROID_HOME:$ANDROID_PLATFORM_TOOLS:$ANDROID_CMAKE/bin:$ANDROID_TOOLS:$DEX2JAR_HOME:${PATH}
 
 #java
 # JDK6=`/usr/libexec/java_home -v 1.6`
@@ -375,14 +370,14 @@ export PATH=${HAR_TOOLS}/bin:${PATH}
 
 #配置HarmonyOS SDK环境变量
 export HOS_SDK_HOME=~/zixie/lib/harmony/sdk
+export OHPM_HOME=${HOS_SDK_HOME}/ohpm
 export PATH=${OHPM_HOME}/bin:${PATH}
 export HDC_HOME=~/zixie/lib/harmony/sdk/HarmonyOS-NEXT-DP2/hms/toolchains/
 export PATH=$PATH:$HDC_HOME
 
 
  
-#node
-export PATH='/usr/local/Cellar/node/10.11.0/bin':$PATH
+#node（使用 nvm 管理，无需硬编码版本路径）
 alias cnpm="npm --registry=https://registry.npm.taobao.org \
 --cache=$HOME/.npm/.cache/cnpm \
 --disturl=https://npm.taobao.org/dist \
@@ -409,8 +404,8 @@ export PATH="/usr/local/opt/ruby@2.6/bin:$PATH"
 export PATH="/usr/local/opt/sqlite/bin:$PATH"
 export PATH="/usr/local/opt/openssl/bin:$PATH"
 
-#python
-export PATH="/Users/zixie/Library/Python/3.7/bin:"${PATH}
+#python（使用 python3 -m site --user-base 动态获取路径）
+export PATH="$(python3 -m site --user-base 2>/dev/null)/bin:${PATH}"
 
 #其余常量
 export SVN_EDITOR=vim
