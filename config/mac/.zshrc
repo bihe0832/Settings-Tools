@@ -384,16 +384,9 @@ alias cnpm="npm --registry=https://registry.npm.taobao.org \
 --userconfig=$HOME/.cnpmrc"
 
 export NVM_DIR="$HOME/.nvm"
-# nvm 延迟加载：首次使用 nvm/node/npm/npx 时才加载（节省 ~260ms 启动时间）
-nvm_lazy_load() {
-    unset -f nvm node npm npx 2>/dev/null
-    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-    [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
-}
-nvm()  { nvm_lazy_load; nvm  "$@"; }
-node() { nvm_lazy_load; node "$@"; }
-npm()  { nvm_lazy_load; npm  "$@"; }
-npx()  { nvm_lazy_load; npx  "$@"; }
+# nvm 正常加载（启动开销约 260ms；换取 node/npm/npx 及全局 CLI 在新 shell 立刻可用）
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 #gem
 export PATH="/usr/local/lib/ruby/gems/2.6.0/bin:$PATH"
 export PATH="/usr/local/opt/ruby@2.6/bin:$PATH"
@@ -406,6 +399,9 @@ export PATH="/usr/local/opt/openssl/bin:$PATH"
 
 #python（使用 python3 -m site --user-base 动态获取路径）
 export PATH="$(python3 -m site --user-base 2>/dev/null)/bin:${PATH}"
+
+#AI
+export PATH="~/zixie/github/AIConfig/tools/zixiekit/.venv/bin:$PATH"
 
 #其余常量
 export SVN_EDITOR=vim
