@@ -82,7 +82,26 @@ oh-package-lock.json5
 .cxx
 .preview
 .preview
+
+######################
+# aaf
+######################
 build
-.codebuddy
 aafRepo
 bin
+
+
+######################
+# ai
+######################
+**/openspec
+**/.sdd
+**/spec-kit/
+**/.claude
+**/.codebuddy
+**/AGENTS.md
+**/CLAUDE.md
+**/CODEBUDDY.md
+
+# CodeBuddy 配置目录
+.codebuddy
