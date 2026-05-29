@@ -105,3 +105,13 @@ bin
 
 # CodeBuddy 配置目录
 .codebuddy
+
+######################
+# Python
+######################
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+dist/
+*.egg
